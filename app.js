@@ -5,7 +5,8 @@
 
   var PLAN = {
     name: "Subscribe",
-    amount: "₹2,499/month",
+    amount: "₹2,499",
+    monthly: "₹2,499/month",
   };
 
   function icons() {
@@ -18,8 +19,8 @@
         '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7.5v6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="16.4" r="1.1" fill="currentColor"/></svg>',
       bill:
         '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3.75h12a1.5 1.5 0 0 1 1.5 1.5v15l-2.2-1.3-2.2 1.3-2.1-1.3-2.1 1.3-2.2-1.3-2.2 1.3v-15A1.5 1.5 0 0 1 6 3.75z" stroke="currentColor" stroke-width="1.8"/><path d="M9 9h6M9 12.5h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
-      check:
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 12.5l3.4 3.4 7.6-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+      chevron:
+        '<svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
       home:
         '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 11.2L12 4.5l8 6.7V20a1 1 0 0 1-1 1h-5.2v-6.2H10.2V21H5a1 1 0 0 1-1-1v-8.8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
       wallet:
@@ -29,40 +30,26 @@
     };
   }
 
-  function heroArt(fault) {
-    var packFill = fault ? "#ffdad6" : "#b4f2b8";
-    var packStroke = fault ? "#ba1a1a" : "#146c2e";
-    var cell = fault ? "#ba1a1a" : "#146c2e";
-    var badge = fault
-      ? '<circle cx="132" cy="18" r="10" fill="#ba1a1a"/><path d="M132 13v6" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><circle cx="132" cy="22.2" r=".9" fill="#fff"/>'
-      : '<circle cx="132" cy="18" r="10" fill="#146c2e"/><path d="M128.2 18.2l2.3 2.2 5.2-5.4" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>';
-
+  function heroArt() {
     return (
-      '<svg viewBox="0 0 148 72" fill="none" aria-hidden="true">' +
-      '<path d="M28 50c8-12 18-18 34-18h28c10 0 16 5 22 14" stroke="#3e4940" stroke-width="2" stroke-linecap="round"/>' +
-      '<circle cx="40" cy="56" r="8" stroke="#161d16" stroke-width="2"/>' +
-      '<circle cx="108" cy="56" r="8" stroke="#161d16" stroke-width="2"/>' +
-      '<path d="M24 50h96c3 0 6 2.4 6 5.4v1.2H22v-2c0-2.6 1.6-4.6 2-4.6z" fill="#2b322b"/>' +
-      '<path d="M46 22h36c4 0 8 3 8 8v12H38V30c0-5 4-8 8-8z" fill="#dce2d8" stroke="#161d16" stroke-width="1.6"/>' +
-      '<path d="M58 16h16c2.4 0 4 1.6 4 3.6V22H54v-2.4c0-2 1.6-3.6 4-3.6z" fill="#cfd6cb" stroke="#161d16" stroke-width="1.4"/>' +
-      '<rect x="78" y="28" width="44" height="22" rx="4" fill="' +
-      packFill +
-      '" stroke="' +
-      packStroke +
-      '" stroke-width="1.8"/>' +
-      '<rect x="82" y="32.5" width="7" height="13" rx="1.2" fill="' +
-      cell +
-      '"/>' +
-      '<rect x="91.5" y="32.5" width="7" height="13" rx="1.2" fill="' +
-      cell +
-      '"/>' +
-      '<rect x="101" y="32.5" width="7" height="13" rx="1.2" fill="' +
-      cell +
-      '" opacity=".55"/>' +
-      '<rect x="110.5" y="32.5" width="7" height="13" rx="1.2" fill="' +
-      packStroke +
-      '" opacity=".25"/>' +
-      badge +
+      '<svg viewBox="0 0 320 170" fill="none" aria-hidden="true">' +
+      '<ellipse cx="160" cy="160" rx="102" ry="8" fill="#ececec"/>' +
+      '<ellipse cx="236" cy="136" rx="15" ry="16" fill="#fff" stroke="#1a1a1a" stroke-width="1.7"/>' +
+      '<ellipse cx="236" cy="136" rx="6" ry="6.5" fill="none" stroke="#1a1a1a" stroke-width="1.3"/>' +
+      '<path d="M98 70c6-22 28-32 62-32 36 0 58 12 64 32" fill="#fff" stroke="#1a1a1a" stroke-width="1.75" stroke-linejoin="round"/>' +
+      '<path d="M84 132V90c0-10 8-16 20-16h96c14 0 24 10 26 22l6 36H84z" fill="#fff" stroke="#1a1a1a" stroke-width="1.75" stroke-linejoin="round"/>' +
+      '<path d="M104 70h116" stroke="#1a1a1a" stroke-width="1.2"/>' +
+      '<path d="M112 73l2 24c2 8 12 12 24 12h36c14 0 22-6 24-14l2-22" fill="#fff" stroke="#1a1a1a" stroke-width="1.5" stroke-linejoin="round"/>' +
+      '<path d="M158 70v62" stroke="#1a1a1a" stroke-width="1.15"/>' +
+      '<path d="M84 102c-16 4-28 12-32 22v8h32v-30z" fill="#fff" stroke="#1a1a1a" stroke-width="1.7" stroke-linejoin="round"/>' +
+      '<path d="M46 94c8 3 20 10 30 16" stroke="#1a1a1a" stroke-width="1.7" stroke-linecap="round"/>' +
+      '<path d="M40 92h14" stroke="#1a1a1a" stroke-width="2.1" stroke-linecap="round"/>' +
+      '<circle cx="60" cy="118" r="4.2" fill="#fff" stroke="#1a1a1a" stroke-width="1.4"/>' +
+      '<circle cx="68" cy="140" r="16" fill="#fff" stroke="#1a1a1a" stroke-width="1.75"/>' +
+      '<circle cx="68" cy="140" r="6.5" fill="none" stroke="#1a1a1a" stroke-width="1.3"/>' +
+      '<circle cx="214" cy="140" r="18" fill="#fff" stroke="#1a1a1a" stroke-width="1.75"/>' +
+      '<circle cx="214" cy="140" r="7.5" fill="none" stroke="#1a1a1a" stroke-width="1.3"/>' +
+      '<path d="M84 132h148" stroke="#1a1a1a" stroke-width="1.5"/>' +
       "</svg>"
     );
   }
@@ -73,24 +60,28 @@
 
     var due = {
       ready: {
-        value: "Paid",
-        sub: "On-time discount applied",
-        tone: "due-paid",
+        date: "25 Sep",
+        amount: PLAN.amount,
+        amountTone: "",
+        note: "",
       },
       fault: {
-        value: "Paid",
-        sub: "On-time discount applied",
-        tone: "due-paid",
+        date: "25 Sep",
+        amount: PLAN.amount,
+        amountTone: "",
+        note: "",
       },
       due: {
-        value: "₹2,499 due",
-        sub: "Due 25 Aug · On-time discount if paid now",
-        tone: "due-warn",
+        date: "25 Aug",
+        amount: PLAN.amount,
+        amountTone: "warn",
+        note: "On-time discount still available",
       },
       overdue: {
-        value: "₹2,499 + penalty",
-        sub: "Overdue since 14 Aug",
-        tone: "due-over",
+        date: "14 Aug",
+        amount: "₹2,499 + penalty",
+        amountTone: "over",
+        note: "Overdue · penalty added",
       },
     };
 
@@ -103,10 +94,10 @@
       mosfetOk: mosfetOk,
       mosfetLabel: mosfetOk ? "Healthy" : "Fault — ride fail",
       batteryLabel: rideOk ? "Charged" : "Charge OK",
-      batterySub: rideOk ? "Still there" : "Issue is MOSFET",
       plan: PLAN,
       due: due[state],
       cta: state === "fault" ? "Fix" : state === "ready" ? null : "Pay now",
+      calm: "You're paid up · next due 25 Sep",
       banner:
         state === "overdue"
           ? {
@@ -166,11 +157,13 @@
     var banner = s.banner
       ? '<div class="banner" role="status">' +
         ic.bill +
-        "<div><strong>" +
+        '<div class="banner-copy"><strong>' +
         s.banner.title +
         "</strong><span>" +
         s.banner.body +
-        "</span></div></div>"
+        "</span></div>" +
+        ic.chevron +
+        "</div>"
       : "";
 
     var cta = s.cta
@@ -179,7 +172,9 @@
         '" type="button">' +
         s.cta +
         "</button>"
-      : '<div class="calm">' + ic.check + " Paid up · no charge due</div>";
+      : '<p class="calm">' + s.calm + "</p>";
+
+    var dueNote = s.due.note ? '<div class="plan-note">' + s.due.note + "</div>" : "";
 
     var html =
       '<div class="phone" data-state="' +
@@ -191,7 +186,7 @@
       "</div>" +
       '<header class="app-bar">' +
       '<div class="brand">' +
-      '<svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#146c2e"/><rect x="6" y="9" width="14" height="10" rx="2" fill="#b4f2b8"/><rect x="20" y="12" width="2.4" height="4" rx=".6" fill="#b4f2b8"/></svg>' +
+      '<svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#111"/><rect x="6" y="9" width="14" height="10" rx="2" fill="#fff"/><rect x="20" y="12" width="2.4" height="4" rx=".6" fill="#fff"/></svg>' +
       "BatterySmart</div>" +
       '<div class="home-label">' +
       titleMap[state] +
@@ -199,8 +194,10 @@
       "</header>" +
       '<main class="screen">' +
       banner +
-      '<section class="hero" aria-label="Ride status">' +
-      '<div class="hero-copy">' +
+      '<div class="hero-art" aria-hidden="true">' +
+      heroArt() +
+      "</div>" +
+      '<section class="hero-copy" aria-label="Ride status">' +
       '<div class="ride ' +
       (s.rideOk ? "ok" : "fail") +
       '">' +
@@ -212,41 +209,36 @@
       '<div class="pct">' +
       s.pct +
       "</div>" +
-      "</div>" +
-      '<div class="hero-art">' +
-      heroArt(!s.mosfetOk) +
-      "</div>" +
       "</section>" +
       '<section class="status-row" aria-label="Battery and MOSFET">' +
-      '<div class="chip ok">' +
+      '<div class="chip">' +
       ic.battery +
       '<div class="meta"><div class="k">Battery</div><div class="v">' +
       s.batteryLabel +
       "</div></div></div>" +
       '<div class="chip ' +
-      (s.mosfetOk ? "ok" : "fail") +
+      (s.mosfetOk ? "" : "fail") +
       '">' +
       (s.mosfetOk ? ic.mosfetOk : ic.mosfetFail) +
       '<div class="meta"><div class="k">MOSFET</div><div class="v">' +
       s.mosfetLabel +
       "</div></div></div>" +
       "</section>" +
-      '<section class="card" aria-label="Plan">' +
-      "<div><div class=\"k\">Plan</div><div class=\"v\">" +
+      '<section class="plan-card" aria-label="Plan and due">' +
+      '<div class="plan-chip">' +
       s.plan.name +
-      '</div><div class="sub">3W battery rental</div></div>' +
-      '<div class="right"><div class="v">' +
-      s.plan.amount +
+      "</div>" +
+      '<div class="plan-pair">' +
+      '<div><div class="k">Date</div><div class="v">' +
+      s.due.date +
       "</div></div>" +
-      "</section>" +
-      '<section class="card ' +
-      s.due.tone +
-      '" aria-label="Due">' +
-      "<div><div class=\"k\">Due</div><div class=\"v\">" +
-      s.due.value +
-      '</div><div class="sub">' +
-      s.due.sub +
+      '<div><div class="k">Amount</div><div class="v' +
+      (s.due.amountTone ? " " + s.due.amountTone : "") +
+      '">' +
+      s.due.amount +
       "</div></div>" +
+      "</div>" +
+      dueNote +
       "</section>" +
       cta +
       '<section class="below" aria-label="More detail">' +

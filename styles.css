@@ -1,41 +1,28 @@
-/* BatterySmart BaaS Home — Material 3 / Flutter-token feel, sunlight contrast */
+/* BatterySmart BaaS Home — white page, Mobbin feel, Bob's fold stack */
 
 :root {
-  --md-sys-color-primary: #146c2e;
-  --md-sys-color-on-primary: #ffffff;
-  --md-sys-color-primary-container: #b4f2b8;
-  --md-sys-color-on-primary-container: #002109;
-  --md-sys-color-error: #ba1a1a;
-  --md-sys-color-on-error: #ffffff;
-  --md-sys-color-error-container: #ffdad6;
-  --md-sys-color-on-error-container: #410002;
-  --md-sys-color-tertiary: #8b5000;
-  --md-sys-color-on-tertiary: #ffffff;
-  --md-sys-color-tertiary-container: #ffdcc2;
-  --md-sys-color-on-tertiary-container: #2e1500;
-  --md-sys-color-surface: #f4f8f1;
-  --md-sys-color-surface-bright: #ffffff;
-  --md-sys-color-surface-container: #e8eee4;
-  --md-sys-color-surface-container-high: #e2e8de;
-  --md-sys-color-surface-container-highest: #dce2d8;
-  --md-sys-color-on-surface: #161d16;
-  --md-sys-color-on-surface-variant: #3e4940;
-  --md-sys-color-outline: #6e7a70;
-  --md-sys-color-outline-variant: #becabe;
-  --md-sys-color-inverse-surface: #2b322b;
-  --md-elevation-1: 0 1px 2px rgba(22, 29, 22, 0.08), 0 1px 3px 1px rgba(22, 29, 22, 0.06);
-  --radius-sm: 12px;
-  --radius-md: 16px;
-  --radius-lg: 20px;
-  --radius-full: 999px;
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 20px;
+  --ink: #111111;
+  --ink-soft: #3d3d3d;
+  --caption: #6b6b6b;
+  --line: #e6e6e6;
+  --page: #ffffff;
+  --accent: #1a8f3c;
+  --accent-ink: #ffffff;
+  --danger: #c62828;
+  --peach: #fde8d7;
+  --rust: #8b3a1f;
+  --chip-fail-bg: #fdecea;
+  --chip-fail-ink: #8b1d1d;
+  --shadow-oval: #ececec;
+  --radius-sm: 10px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --space-inset: 16px;
   --target: 48px;
   --nav-h: 64px;
   --switcher-h: 28px;
+  --hero-art-h: 148px;
+  --cta-h: 54px;
   --font: "Manrope", "Roboto", system-ui, sans-serif;
 }
 
@@ -49,8 +36,8 @@ html,
 body {
   margin: 0;
   min-height: 100%;
-  background: #cfd6cb;
-  color: var(--md-sys-color-on-surface);
+  background: #e8e8e8;
+  color: var(--ink);
   font-family: var(--font);
   font-size: 16px;
   line-height: 1.3;
@@ -66,10 +53,11 @@ body {
   width: 100%;
   max-width: 412px;
   min-height: 100dvh;
-  background: var(--md-sys-color-surface);
+  background: var(--page);
   display: flex;
   flex-direction: column;
   position: relative;
+  color: var(--ink);
 }
 
 /* Developer switcher — not product UI */
@@ -80,8 +68,8 @@ body {
   align-items: center;
   gap: 6px;
   padding: 0 10px;
-  background: #2b322b;
-  color: #dce2d8;
+  background: #1a1a1a;
+  color: #f2f2f2;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -96,7 +84,7 @@ body {
 }
 
 .dev-switcher a {
-  color: #dce2d8;
+  color: #f2f2f2;
   text-decoration: none;
   padding: 2px 7px;
   border-radius: 6px;
@@ -104,7 +92,7 @@ body {
 }
 
 .dev-switcher a[aria-current="page"] {
-  background: #4d6b4f;
+  background: #333;
   color: #fff;
 }
 
@@ -112,8 +100,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 48px;
-  padding: 0 16px;
+  min-height: 44px;
+  padding: 0 var(--space-inset);
   flex-shrink: 0;
 }
 
@@ -122,20 +110,21 @@ body {
   align-items: center;
   gap: 8px;
   font-weight: 800;
-  font-size: 17px;
+  font-size: 16px;
   letter-spacing: -0.02em;
+  color: var(--ink);
 }
 
 .brand-mark {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   flex-shrink: 0;
 }
 
 .home-label {
   font-size: 12px;
   font-weight: 700;
-  color: var(--md-sys-color-on-surface-variant);
+  color: var(--caption);
   letter-spacing: 0.02em;
 }
 
@@ -143,27 +132,33 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 0 16px calc(var(--nav-h) + 16px);
+  padding: 0 var(--space-inset) calc(var(--nav-h) + 16px);
 }
 
+/* KOHO-style overdue banner — pale peach, rust type, icon + chevron */
 .banner {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 10px 12px;
   border-radius: var(--radius-md);
-  background: var(--md-sys-color-tertiary-container);
-  color: var(--md-sys-color-on-tertiary-container);
-  margin-bottom: 10px;
+  background: var(--peach);
+  color: var(--rust);
+  margin: 0 0 8px;
 }
 
 .banner svg {
   flex-shrink: 0;
 }
 
+.banner .banner-copy {
+  flex: 1;
+  min-width: 0;
+}
+
 .banner strong {
   display: block;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -174,50 +169,19 @@ body {
   margin-top: 1px;
 }
 
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  padding: 4px 0 8px;
+.banner .chevron {
+  flex-shrink: 0;
+  opacity: 0.85;
 }
 
-.hero-copy {
-  min-width: 0;
-}
-
-.ride {
-  font-size: 15px;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-}
-
-.ride.ok {
-  color: var(--md-sys-color-primary);
-}
-
-.ride.fail {
-  color: var(--md-sys-color-error);
-}
-
-.km {
-  font-size: 44px;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1;
-  margin: 2px 0 0;
-}
-
-.pct {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--md-sys-color-on-surface-variant);
-  margin-top: 2px;
-}
-
+/* Rivian-feel: short line-illustrated white 3W + oval shadow. Max 140–180pt. */
 .hero-art {
-  width: 148px;
-  height: 72px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: var(--hero-art-h);
+  max-height: 180px;
+  margin: 0 0 2px;
   flex-shrink: 0;
 }
 
@@ -227,11 +191,42 @@ body {
   display: block;
 }
 
+.hero-copy {
+  padding: 2px 0 10px;
+}
+
+.ride {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.ride.fail {
+  color: var(--danger);
+}
+
+.km {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 2px 0 0;
+  color: var(--ink);
+}
+
+.pct {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--caption);
+  margin-top: 2px;
+}
+
 .status-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
-  margin: 2px 0 10px;
+  margin: 0 0 10px;
 }
 
 .chip {
@@ -241,8 +236,8 @@ body {
   min-height: 48px;
   padding: 6px 10px;
   border-radius: var(--radius-md);
-  background: var(--md-sys-color-surface-bright);
-  box-shadow: var(--md-elevation-1);
+  background: var(--page);
+  border: 1px solid var(--line);
 }
 
 .chip svg {
@@ -256,7 +251,7 @@ body {
 .chip .k {
   font-size: 11px;
   font-weight: 700;
-  color: var(--md-sys-color-on-surface-variant);
+  color: var(--caption);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -265,82 +260,93 @@ body {
   font-size: 14px;
   font-weight: 800;
   letter-spacing: -0.01em;
-}
-
-.chip.ok .v {
-  color: var(--md-sys-color-primary);
+  color: var(--ink);
 }
 
 .chip.fail {
-  background: var(--md-sys-color-error-container);
+  background: var(--chip-fail-bg);
+  border-color: transparent;
 }
 
 .chip.fail .v,
 .chip.fail .k {
-  color: var(--md-sys-color-on-error-container);
+  color: var(--chip-fail-ink);
 }
 
-.card {
-  background: var(--md-sys-color-surface-bright);
+/* Deezer plan-name chip + DATE/AMOUNT, compressed ~56–72pt */
+.plan-card {
+  border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  padding: 10px 12px;
-  min-height: 48px;
-  box-shadow: var(--md-elevation-1);
-  display: flex;
+  padding: 8px 12px 10px;
+  min-height: 56px;
+  margin-bottom: 10px;
+}
+
+.plan-chip {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-
-.card .k {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--md-sys-color-on-surface-variant);
+  height: 22px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
 }
 
-.card .v {
+.plan-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.plan-pair .k {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--caption);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.plan-pair .v {
   font-size: 16px;
   font-weight: 800;
   letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-top: 1px;
 }
 
-.card .sub {
+.plan-pair .v.warn {
+  color: #8b5000;
+}
+
+.plan-pair .v.over {
+  color: var(--danger);
+}
+
+.plan-note {
   font-size: 12px;
   font-weight: 600;
-  color: var(--md-sys-color-on-surface-variant);
-  margin-top: 2px;
+  color: var(--caption);
+  margin-top: 6px;
 }
 
-.card .right {
-  text-align: right;
-}
-
-.card.due-warn .v {
-  color: var(--md-sys-color-tertiary);
-}
-
-.card.due-over .v {
-  color: var(--md-sys-color-error);
-}
-
-.card.due-paid .v {
-  color: var(--md-sys-color-primary);
-}
-
+/* Gusto fat CTA — full-bleed in 16pt inset, rounded RECT, 52–56pt */
 .cta {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 52px;
-  margin: 2px 0 0;
+  min-height: var(--cta-h);
+  height: var(--cta-h);
+  margin: 0;
   border: 0;
-  border-radius: var(--radius-full);
-  background: var(--md-sys-color-primary);
-  color: var(--md-sys-color-on-primary);
+  border-radius: var(--radius-md);
+  background: var(--ink);
+  color: #fff;
   font: inherit;
   font-size: 18px;
   font-weight: 800;
@@ -349,27 +355,27 @@ body {
 }
 
 .cta.fix {
-  background: var(--md-sys-color-error);
-  color: var(--md-sys-color-on-error);
-}
-
-.cta.pay {
-  background: var(--md-sys-color-inverse-surface);
+  background: var(--danger);
   color: #fff;
 }
 
+.cta.pay {
+  background: var(--ink);
+  color: #fff;
+}
+
+/* Octopus-style paid-up: calm sentence, not a green success pill */
 .calm {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 52px;
-  margin: 2px 0 0;
-  border-radius: var(--radius-full);
-  background: var(--md-sys-color-primary-container);
-  color: var(--md-sys-color-on-primary-container);
-  font-size: 16px;
-  font-weight: 800;
+  display: block;
+  min-height: 0;
+  margin: 4px 0 0;
+  padding: 8px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--caption);
+  text-align: left;
+  background: transparent;
+  border-radius: 0;
 }
 
 /* P1 / job answers below the 412×892 fold */
@@ -383,12 +389,12 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--md-sys-color-on-surface-variant);
+  color: var(--caption);
   margin: 0 0 8px;
 }
 
 .job {
-  background: var(--md-sys-color-surface-container);
+  background: #f7f7f7;
   border-radius: var(--radius-md);
   padding: 12px;
   margin-bottom: 8px;
@@ -398,13 +404,14 @@ body {
   margin: 0 0 4px;
   font-size: 14px;
   font-weight: 800;
+  color: var(--ink);
 }
 
 .job p {
   margin: 0;
   font-size: 14px;
   font-weight: 600;
-  color: var(--md-sys-color-on-surface-variant);
+  color: var(--caption);
 }
 
 .meter-row {
@@ -414,16 +421,16 @@ body {
 }
 
 .meter-box {
-  background: var(--md-sys-color-surface-bright);
+  background: var(--page);
+  border: 1px solid var(--line);
   border-radius: var(--radius-md);
   padding: 12px;
-  box-shadow: var(--md-elevation-1);
 }
 
 .meter-box .k {
   font-size: 12px;
   font-weight: 700;
-  color: var(--md-sys-color-on-surface-variant);
+  color: var(--caption);
 }
 
 .meter-box .v {
@@ -431,12 +438,13 @@ body {
   font-weight: 800;
   letter-spacing: -0.03em;
   margin-top: 2px;
+  color: var(--ink);
 }
 
 .note {
   font-size: 13px;
   font-weight: 600;
-  color: var(--md-sys-color-on-surface-variant);
+  color: var(--caption);
   margin: 8px 0 0;
 }
 
@@ -450,8 +458,8 @@ body {
   height: var(--nav-h);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background: var(--md-sys-color-surface-bright);
-  border-top: 1px solid var(--md-sys-color-outline-variant);
+  background: var(--page);
+  border-top: 1px solid var(--line);
   z-index: 10;
 }
 
@@ -463,13 +471,13 @@ body {
   gap: 2px;
   min-height: var(--target);
   text-decoration: none;
-  color: var(--md-sys-color-on-surface-variant);
+  color: var(--caption);
   font-size: 11px;
   font-weight: 700;
 }
 
 .nav a[aria-current="page"] {
-  color: var(--md-sys-color-primary);
+  color: var(--ink);
 }
 
 .nav svg {
@@ -477,7 +485,7 @@ body {
 }
 
 .stub {
-  padding: 24px 16px calc(var(--nav-h) + 24px);
+  padding: 24px var(--space-inset) calc(var(--nav-h) + 24px);
 }
 
 .stub h1 {
@@ -485,12 +493,13 @@ body {
   font-weight: 800;
   letter-spacing: -0.03em;
   margin: 8px 0;
+  color: var(--ink);
 }
 
 .stub p {
   font-size: 16px;
   font-weight: 600;
-  color: var(--md-sys-color-on-surface-variant);
+  color: var(--caption);
 }
 
 @media (min-width: 413px) {
@@ -499,7 +508,7 @@ body {
     margin: 16px 0 80px;
     border-radius: 28px;
     overflow: hidden;
-    box-shadow: 0 16px 40px rgba(22, 29, 22, 0.18);
+    box-shadow: 0 16px 40px rgba(17, 17, 17, 0.16);
   }
 
   .nav {

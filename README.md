@@ -34,14 +34,11 @@ Then open `http://localhost:4173/` at a 412×892 phone viewport.
 
 Jobs: did it charge overnight, is it still there, can I ride, what’s my plan, do I owe, what’s the next action.
 
-P0 above the fold on a 412×892 phone:
+P0 above the fold on a 412×892 phone, in this stack:
 
-- Battery + MOSFET (MOSFET is ride-fail, not settings)
-- Plan + monthly amount (Subscribe · ₹2,499/month)
-- Due + penalty / on-time discount
-- One fat **Pay now** or **Fix** CTA (Ready is paid-up calm — no Pay now)
+header → (overdue peach banner) → short line-illustrated white 3W → can-ride + km + small % → MOSFET/battery → Subscribe chip + DATE/AMOUNT → fat **Pay now** or **Fix**
 
-Hero is can-I-ride + **km left**. % stays small under the km.
+Ready is a quiet “You’re paid up · next due …” sentence — no Pay now. km is 24–32pt. The 3W hero stays short (140–180pt) so plan + due + CTA stay on the first screen.
 
 Nav stays **Home / My Wallet / Plan Details**. Wallet and Plan Details are stubs so IA is unchanged.
 

@@ -4,11 +4,19 @@ Throwaway static Home screens for **3W battery rental**. English only. Mobile vi
 
 No npm. No build. Open the HTML files, or serve the folder.
 
-Live: [baas-homepage.vercel.app](https://baas-homepage.vercel.app)
+Working preview (HTTP 200, commit `1f5d531`). Production `baas-homepage.vercel.app/first-run` is still a stale deploy and 404s until `vercel --prod`.
 
 ## Open every Home state
 
-Query on Home (`index.html` defaults to Ready), or the dedicated file. `cleanUrls` also serves `/fault`, `/grace`, and so on.
+Donna preview (these return 200):
+
+- [first-run](https://cdn.jsdelivr.net/gh/prakashKJ/baas-homepage@1f5d531/first-run.html)
+- [paid-up](https://cdn.jsdelivr.net/gh/prakashKJ/baas-homepage@1f5d531/paid-up.html)
+- [grace](https://cdn.jsdelivr.net/gh/prakashKJ/baas-homepage@1f5d531/grace.html)
+- [subscribe](https://cdn.jsdelivr.net/gh/prakashKJ/baas-homepage@1f5d531/subscribe.html)
+- [lease](https://cdn.jsdelivr.net/gh/prakashKJ/baas-homepage@1f5d531/lease.html)
+
+Query on Home (`index.html` defaults to Ready), or the dedicated file. After a fresh Vercel deploy, `cleanUrls` also serves `/fault`, `/grace`, and so on.
 
 | State | Query | File / path |
 | --- | --- | --- |

@@ -30,22 +30,23 @@
     };
   }
 
-  /* Passenger e-rickshaw: open cabin, bench seat, canopy. Not a cargo box, not a scooter. */
+  /* Passenger 3W e-rickshaw: flat canopy, open cabin, bench. One front + two rear wheels. */
   function heroArt() {
     return (
       '<svg viewBox="0 0 340 172" fill="none" aria-hidden="true">' +
       '<ellipse cx="172" cy="163" rx="112" ry="7.5" fill="#cfcfcf"/>' +
       '<ellipse cx="270" cy="134" rx="13" ry="14" fill="#fff" stroke="#111" stroke-width="1.8"/>' +
       '<ellipse cx="270" cy="134" rx="5" ry="5.5" fill="none" stroke="#111" stroke-width="1.3"/>' +
-      '<path d="M118 76c8-36 42-50 84-50 46 0 78 16 84 50" fill="#fff" stroke="#111" stroke-width="1.9" stroke-linejoin="round"/>' +
-      '<path d="M166 76h108c6 0 10 6 10 14l-4 42H166V76z" fill="#fff" stroke="#111" stroke-width="1.9" stroke-linejoin="round"/>' +
+      '<path d="M116 30h152c10 0 14 5 14 12v16H110c2-20 3-28 6-28z" fill="#fff" stroke="#111" stroke-width="2" stroke-linejoin="round"/>' +
+      '<path d="M124 58v52M264 58v52" stroke="#111" stroke-width="1.8"/>' +
+      '<path d="M166 58h108c6 0 10 6 10 14v48H166V58z" fill="#fff" stroke="#111" stroke-width="1.9" stroke-linejoin="round"/>' +
       '<path d="M178 80h88c3 0 5 2 5 6v32H178V80z" fill="#f7f7f7" stroke="#111" stroke-width="1.5"/>' +
       '<path d="M184 116h78" stroke="#111" stroke-width="2.1" stroke-linecap="round"/>' +
       '<path d="M184 116v-16M223 116v-16M262 116v-16" stroke="#111" stroke-width="1.6" stroke-linecap="round"/>' +
       '<path d="M184 100h78" stroke="#111" stroke-width="1.3" stroke-linecap="round"/>' +
       '<path d="M184 116c0 8 78 8 78 0" fill="none" stroke="#111" stroke-width="1.5"/>' +
-      '<path d="M118 76l4 34h44V76H118z" fill="#fff" stroke="#111" stroke-width="1.8" stroke-linejoin="round"/>' +
-      '<path d="M126 80l2 22h28V80H126z" fill="#fff" stroke="#111" stroke-width="1.35"/>' +
+      '<path d="M118 58l4 52h44V58H118z" fill="#fff" stroke="#111" stroke-width="1.8" stroke-linejoin="round"/>' +
+      '<path d="M126 64l2 22h28V64H126z" fill="#fff" stroke="#111" stroke-width="1.35"/>' +
       '<path d="M118 102c-22 6-40 16-44 26v6h44v-32z" fill="#fff" stroke="#111" stroke-width="1.8" stroke-linejoin="round"/>' +
       '<path d="M52 88c16 6 36 16 52 24" stroke="#111" stroke-width="2" stroke-linecap="round"/>' +
       '<path d="M46 86h18" stroke="#111" stroke-width="2.6" stroke-linecap="round"/>' +
@@ -56,7 +57,6 @@
       '<circle cx="240" cy="141" r="17.5" fill="#fff" stroke="#111" stroke-width="1.9"/>' +
       '<circle cx="240" cy="141" r="7" fill="none" stroke="#111" stroke-width="1.35"/>' +
       '<path d="M118 132h160" stroke="#111" stroke-width="1.7"/>' +
-      '<path d="M276 94v24" stroke="#111" stroke-width="1.4"/>' +
       "</svg>"
     );
   }
@@ -99,8 +99,8 @@
       km: rideOk ? "62 km left" : "62 km left · 78%",
       pct: rideOk ? "78%" : "",
       mosfetOk: mosfetOk,
-      mosfetLabel: mosfetOk ? "Healthy" : "Fault — can't ride",
-      batteryLabel: rideOk ? "Charged" : "Unused",
+      mosfetLabel: mosfetOk ? "Healthy" : "Fault — ride fail",
+      batteryLabel: rideOk ? "Charged" : "Has charge",
       plan: PLAN,
       due: due[state],
       cta: state === "fault" ? "Fix" : state === "ready" ? null : "Pay now",

@@ -285,7 +285,7 @@
   }
 
   function hrefFor(name) {
-    return name === "ready" ? "index.html" : name + ".html";
+    return name + ".html";
   }
 
   function render(state) {

@@ -45,7 +45,6 @@
   --space-inset: 16px;
   --target: 52px;
   --nav-h: 72px;
-  --switcher-h: 26px;
   --hero-art-h: 158px;
   --cta-h: 56px;
   --font: "Manrope", "Roboto", system-ui, sans-serif;
@@ -87,52 +86,6 @@ body {
 
 .phone[data-state="fault"] {
   --page: #fff6f4;
-}
-
-/* Developer-only strip — debug chrome, not a product tab bar */
-.dev-switcher {
-  height: var(--switcher-h);
-  min-height: var(--switcher-h);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0 10px;
-  background: #141414;
-  color: #8d8d8d;
-  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  text-transform: none;
-  flex-shrink: 0;
-  z-index: 20;
-  border-bottom: 1px dashed #3f3f3f;
-}
-
-.dev-switcher span {
-  color: #e6b800;
-  font-weight: 700;
-  margin-right: 2px;
-}
-
-.dev-switcher code {
-  color: #6e6e6e;
-  font-family: inherit;
-  font-size: inherit;
-}
-
-.dev-switcher a {
-  color: #bdbdbd;
-  text-decoration: none;
-  padding: 1px 5px;
-  border-radius: 2px;
-  border: 1px dashed transparent;
-}
-
-.dev-switcher a[aria-current="page"] {
-  color: #f3f3f3;
-  border-color: #5a5a5a;
-  background: #222;
 }
 
 /* M3 top app bar — brand only, no Home / Ready breadcrumb */

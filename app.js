@@ -79,7 +79,7 @@
       },
       overdue: {
         date: "14 Aug",
-        amount: "₹2,499 + penalty",
+        amount: "₹2,499 + ₹150 penalty",
         amountTone: "over",
         note: "Overdue · penalty added",
       },

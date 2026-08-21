@@ -30,33 +30,29 @@
     };
   }
 
-  /* Passenger 3W e-rickshaw: flat canopy, open cabin, bench. One front + two rear wheels. */
+  /* Passenger e-rickshaw: open sides, bench, canopy, handlebar. Not a cargo/loader 3W. */
   function heroArt() {
     return (
       '<svg viewBox="0 0 340 172" fill="none" aria-hidden="true">' +
-      '<ellipse cx="172" cy="163" rx="112" ry="7.5" fill="#cfcfcf"/>' +
-      '<ellipse cx="270" cy="134" rx="13" ry="14" fill="#fff" stroke="#111" stroke-width="1.8"/>' +
-      '<ellipse cx="270" cy="134" rx="5" ry="5.5" fill="none" stroke="#111" stroke-width="1.3"/>' +
-      '<path d="M116 30h152c10 0 14 5 14 12v16H110c2-20 3-28 6-28z" fill="#fff" stroke="#111" stroke-width="2" stroke-linejoin="round"/>' +
-      '<path d="M124 58v52M264 58v52" stroke="#111" stroke-width="1.8"/>' +
-      '<path d="M166 58h108c6 0 10 6 10 14v48H166V58z" fill="#fff" stroke="#111" stroke-width="1.9" stroke-linejoin="round"/>' +
-      '<path d="M178 80h88c3 0 5 2 5 6v32H178V80z" fill="#f7f7f7" stroke="#111" stroke-width="1.5"/>' +
-      '<path d="M184 116h78" stroke="#111" stroke-width="2.1" stroke-linecap="round"/>' +
-      '<path d="M184 116v-16M223 116v-16M262 116v-16" stroke="#111" stroke-width="1.6" stroke-linecap="round"/>' +
-      '<path d="M184 100h78" stroke="#111" stroke-width="1.3" stroke-linecap="round"/>' +
-      '<path d="M184 116c0 8 78 8 78 0" fill="none" stroke="#111" stroke-width="1.5"/>' +
-      '<path d="M118 58l4 52h44V58H118z" fill="#fff" stroke="#111" stroke-width="1.8" stroke-linejoin="round"/>' +
-      '<path d="M126 64l2 22h28V64H126z" fill="#fff" stroke="#111" stroke-width="1.35"/>' +
-      '<path d="M118 102c-22 6-40 16-44 26v6h44v-32z" fill="#fff" stroke="#111" stroke-width="1.8" stroke-linejoin="round"/>' +
-      '<path d="M52 88c16 6 36 16 52 24" stroke="#111" stroke-width="2" stroke-linecap="round"/>' +
-      '<path d="M46 86h18" stroke="#111" stroke-width="2.6" stroke-linecap="round"/>' +
-      '<circle cx="80" cy="118" r="4.4" fill="#fff" stroke="#111" stroke-width="1.5"/>' +
-      '<path d="M68 128c0-10 26-10 26 2" fill="none" stroke="#111" stroke-width="1.5"/>' +
-      '<circle cx="82" cy="141" r="16" fill="#fff" stroke="#111" stroke-width="1.9"/>' +
-      '<circle cx="82" cy="141" r="6.2" fill="none" stroke="#111" stroke-width="1.35"/>' +
+      '<ellipse cx="168" cy="164" rx="110" ry="7" fill="#cfcfcf"/>' +
+      '<ellipse cx="276" cy="132" rx="12" ry="13.5" fill="#fff" stroke="#111" stroke-width="1.8"/>' +
+      '<ellipse cx="276" cy="132" rx="4.6" ry="5.2" fill="none" stroke="#111" stroke-width="1.25"/>' +
+      '<path d="M112 126h160c7 0 10 3 10 7v5H106v-5c0-5 3-7 6-7z" fill="#fff" stroke="#111" stroke-width="1.8" stroke-linejoin="round"/>' +
       '<circle cx="240" cy="141" r="17.5" fill="#fff" stroke="#111" stroke-width="1.9"/>' +
-      '<circle cx="240" cy="141" r="7" fill="none" stroke="#111" stroke-width="1.35"/>' +
-      '<path d="M118 132h160" stroke="#111" stroke-width="1.7"/>' +
+      '<circle cx="240" cy="141" r="6.8" fill="none" stroke="#111" stroke-width="1.35"/>' +
+      '<circle cx="76" cy="141" r="16" fill="#fff" stroke="#111" stroke-width="1.9"/>' +
+      '<circle cx="76" cy="141" r="6.2" fill="none" stroke="#111" stroke-width="1.35"/>' +
+      '<path d="M112 126c-22 2-34 8-40 16v4h40v-20z" fill="#fff" stroke="#111" stroke-width="1.7" stroke-linejoin="round"/>' +
+      '<circle cx="76" cy="118" r="4.2" fill="#fff" stroke="#111" stroke-width="1.5"/>' +
+      '<path d="M48 84c18 8 38 20 54 28" stroke="#111" stroke-width="2" stroke-linecap="round"/>' +
+      '<path d="M42 82h22" stroke="#111" stroke-width="2.8" stroke-linecap="round"/>' +
+      '<path d="M108 116c2-10 26-12 32-2l-2 14h-28c-1-4-2-8-2-12z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/>' +
+      '<path d="M248 64c6-2 16 1 16 11v51h-16V64z" fill="#fff" stroke="#111" stroke-width="1.7" stroke-linejoin="round"/>' +
+      '<path d="M164 108h98c5 0 8 3 8 8v10H160v-10c0-5 2-8 4-8z" fill="#fff" stroke="#111" stroke-width="1.7" stroke-linejoin="round"/>' +
+      '<path d="M210 110v14" stroke="#111" stroke-width="1.2"/>' +
+      '<path d="M122 50v76" stroke="#111" stroke-width="1.8"/>' +
+      '<path d="M262 50v20" stroke="#111" stroke-width="1.8"/>' +
+      '<path d="M108 30h164c10 0 14 5 14 12v10H104c1-16 3-22 4-22z" fill="#fff" stroke="#111" stroke-width="2" stroke-linejoin="round"/>' +
       "</svg>"
     );
   }

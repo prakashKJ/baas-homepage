@@ -275,9 +275,14 @@ body {
 
 /* Deezer plan-name chip + DATE/AMOUNT, compressed ~56–72pt */
 .plan-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 12px;
+  row-gap: 4px;
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  padding: 8px 12px 10px;
+  padding: 8px 12px;
   min-height: 56px;
   margin-bottom: 10px;
 }
@@ -294,13 +299,14 @@ body {
   font-weight: 800;
   letter-spacing: 0.07em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .plan-pair {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.25fr;
   gap: 8px;
-  margin-top: 8px;
+  min-width: 0;
 }
 
 .plan-pair .k {
@@ -312,10 +318,11 @@ body {
 }
 
 .plan-pair .v {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--ink);
+  line-height: 1.15;
   margin-top: 1px;
 }
 
@@ -328,10 +335,10 @@ body {
 }
 
 .plan-note {
-  font-size: 12px;
+  grid-column: 1 / -1;
+  font-size: 11px;
   font-weight: 600;
   color: var(--caption);
-  margin-top: 6px;
 }
 
 /* Gusto fat CTA — full-bleed in 16pt inset, rounded RECT, 52–56pt */

@@ -1,32 +1,53 @@
-/* BatterySmart BaaS Home — white page, sunlight contrast, 3W hero */
+/* BatterySmart BaaS Home — light blue + mint, M3 tokens, sunlight contrast */
 
 :root {
-  --ink: #0c1b24;
-  --ink-soft: #2a4450;
-  --caption: #3d5560;
-  --line: #b7cdd6;
-  --page: #f3fbff;
-  --surface: #ffffff;
-  --mint: #0b6b4a;
-  --mint-soft: #d9fff0;
-  --blue: #d7eef8;
-  --accent: #0b6b4a;
-  --accent-ink: #ffffff;
-  --danger: #b42318;
-  --peach: #fde8d7;
-  --rust: #8b3a1f;
-  --grace: #d7eef8;
-  --grace-ink: #0c1b24;
-  --chip-fail-bg: #fdecea;
-  --chip-fail-ink: #8b1d1d;
-  --radius-sm: 10px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
+  /* Material 3-style tokens (seed: mint + sky). High-contrast for outdoor glare. */
+  --md-sys-color-surface: #e8f4fb;
+  --md-sys-color-surface-bright: #f4faff;
+  --md-sys-color-surface-container-lowest: #ffffff;
+  --md-sys-color-surface-container-low: #d7eef8;
+  --md-sys-color-surface-container: #c5e6f4;
+  --md-sys-color-on-surface: #052028;
+  --md-sys-color-on-surface-variant: #1d3a44;
+  --md-sys-color-outline: #3d5b66;
+  --md-sys-color-outline-variant: #8eafbb;
+  --md-sys-color-primary: #005c44;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #b6f3d6;
+  --md-sys-color-on-primary-container: #003826;
+  --md-sys-color-secondary: #00658e;
+  --md-sys-color-secondary-container: #c4e7ff;
+  --md-sys-color-on-secondary-container: #001e2d;
+  --md-sys-color-error: #9b1b12;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-error-container: #ffdad6;
+  --md-sys-color-on-error-container: #410002;
+  --md-sys-shape-sm: 8px;
+  --md-sys-shape-md: 12px;
+  --md-sys-shape-lg: 16px;
+  --md-sys-shape-xl: 28px;
+
+  --ink: var(--md-sys-color-on-surface);
+  --ink-soft: var(--md-sys-color-on-surface-variant);
+  --caption: var(--md-sys-color-on-surface-variant);
+  --line: var(--md-sys-color-outline-variant);
+  --page: var(--md-sys-color-surface-bright);
+  --accent: var(--md-sys-color-primary);
+  --accent-ink: var(--md-sys-color-on-primary);
+  --danger: var(--md-sys-color-error);
+  --peach: #ffdcc8;
+  --rust: #6f2d0c;
+  --chip-fail-bg: var(--md-sys-color-error);
+  --chip-fail-ink: var(--md-sys-color-on-error);
+  --radius-sm: var(--md-sys-shape-sm);
+  --radius-md: var(--md-sys-shape-md);
+  --radius-lg: var(--md-sys-shape-lg);
   --space-inset: 16px;
-  --target: 48px;
-  --nav-h: 64px;
-  --hero-art-h: 132px;
-  --cta-h: 54px;
+  --target: 52px;
+  --nav-h: 72px;
+  --switcher-h: 26px;
+  --hero-art-h: 158px;
+  --cta-h: 56px;
   --font: "Manrope", "Roboto", system-ui, sans-serif;
 }
 
@@ -40,7 +61,7 @@ html,
 body {
   margin: 0;
   min-height: 100%;
-  background: #c5dce6;
+  background: #c5d8e2;
   color: var(--ink);
   font-family: var(--font);
   font-size: 16px;
@@ -64,14 +85,18 @@ body {
   color: var(--ink);
 }
 
+.phone[data-state="fault"] {
+  --page: #fff6f4;
+}
+
 /* Developer-only strip — debug chrome, not a product tab bar */
 .dev-switcher {
-  min-height: 26px;
+  height: var(--switcher-h);
+  min-height: var(--switcher-h);
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 4px 6px;
-  padding: 4px 10px;
+  gap: 6px;
+  padding: 0 10px;
   background: #141414;
   color: #8d8d8d;
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
@@ -110,53 +135,36 @@ body {
   background: #222;
 }
 
+/* M3 top app bar — brand only, no Home / Ready breadcrumb */
 .app-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
   min-height: 56px;
   padding: 8px var(--space-inset);
   flex-shrink: 0;
-  background: linear-gradient(180deg, var(--blue) 0%, var(--page) 100%);
-}
-
-.header-ride {
-  display: inline-flex;
-  align-items: center;
-  min-height: 32px;
-  padding: 0 10px;
-  border-radius: 999px;
-  background: var(--mint-soft);
-  color: var(--mint);
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.header-ride.fail {
-  background: var(--chip-fail-bg);
-  color: var(--chip-fail-ink);
+  background: linear-gradient(180deg, var(--md-sys-color-secondary-container) 0%, var(--page) 100%);
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-weight: 800;
-  font-size: 17px;
-  letter-spacing: -0.02em;
+  font-size: 20px;
+  letter-spacing: -0.03em;
   color: var(--ink);
 }
 
 .brand-mark {
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
 }
 
 .home-label {
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 800;
   color: var(--caption);
 }
 
@@ -165,7 +173,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 0;
-  padding: 0 var(--space-inset) calc(var(--nav-h) + 14px);
+  padding: 0 var(--space-inset) calc(var(--nav-h) + 20px);
 }
 
 /* KOHO-style overdue banner — pale peach, rust type, icon + chevron */
@@ -173,21 +181,12 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 12px;
+  padding: 12px 14px;
   border-radius: var(--radius-md);
   background: var(--peach);
   color: var(--rust);
-  margin: 0 0 8px;
-}
-
-.banner.grace {
-  background: var(--grace);
-  color: var(--grace-ink);
-}
-
-.banner.fault {
-  background: var(--chip-fail-bg);
-  color: var(--chip-fail-ink);
+  margin: 0 0 10px;
+  min-height: var(--target);
 }
 
 .banner svg {
@@ -201,14 +200,14 @@ body {
 
 .banner strong {
   display: block;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 800;
 }
 
 .banner span {
   display: block;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   margin-top: 1px;
 }
 
@@ -217,108 +216,46 @@ body {
   opacity: 0.85;
 }
 
-/* Short line-illustrated passenger e-rickshaw (cabin + bench) + oval shadow */
-.hero-art {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  height: var(--hero-art-h);
-  max-height: 160px;
-  margin: 0 0 2px;
-  flex-shrink: 0;
+.banner.grace {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
 }
 
-.hero-art svg {
-  width: 100%;
-  height: 100%;
-  display: block;
+.banner.fault {
+  background: var(--md-sys-color-error-container);
+  color: var(--md-sys-color-on-error-container);
 }
 
-.hero-copy {
-  padding: 2px 0 12px;
-}
-
-.ride {
-  font-size: 16px;
+.header-ride {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  font-size: 13px;
   font-weight: 800;
-  letter-spacing: -0.01em;
-  color: var(--ink);
+  pointer-events: none;
 }
 
-.ride.fail {
-  color: var(--danger);
+.header-ride.fail {
+  background: var(--md-sys-color-error);
+  color: var(--md-sys-color-on-error);
 }
 
-.km {
-  font-size: 34px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  margin: 2px 0 0;
-  color: var(--ink);
-}
-
-.pct {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--caption);
-  margin-top: 2px;
-}
-
-/* Fault: Can't ride is the hero. km is demoted. */
-.fail-hero .ride {
-  font-size: 34px;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-}
-
-.fail-hero .km {
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 1.3;
-  margin-top: 6px;
-  color: var(--caption);
-}
-
-.overnight {
-  margin: 8px 0 0;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--ink-soft);
-  line-height: 1.35;
-}
-
-.status-row {
+.jobs {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
   margin: 0 0 12px;
 }
 
-.chip {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 56px;
-  padding: 8px 12px;
-  border-radius: var(--radius-md);
-  background: var(--surface);
-  border: 1.5px solid var(--line);
-}
-
-.jobs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px;
-  margin: 0 0 10px;
-}
-
 .jobs div {
-  min-height: 48px;
-  padding: 6px 10px;
+  min-height: 52px;
+  padding: 8px 10px;
   border-radius: var(--radius-sm);
-  background: var(--surface);
+  background: var(--md-sys-color-surface-container-lowest);
   border: 1.5px solid var(--line);
 }
 
@@ -340,12 +277,118 @@ body {
 }
 
 .phone[data-state="fault"] .jobs div:first-child {
-  background: var(--chip-fail-bg);
+  background: var(--md-sys-color-error-container);
   border-color: transparent;
 }
 
 .phone[data-state="fault"] .jobs div:first-child b {
-  color: var(--chip-fail-ink);
+  color: var(--md-sys-color-on-error-container);
+}
+
+/* Rivian-short passenger e-rickshaw hero */
+.hero-art {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: var(--hero-art-h);
+  max-height: 172px;
+  margin: 0 0 4px;
+  flex-shrink: 0;
+  background:
+    radial-gradient(120% 80% at 50% 100%, rgba(182, 243, 214, 0.55) 0%, rgba(196, 231, 255, 0.2) 55%, transparent 78%);
+  border-radius: var(--md-sys-shape-xl);
+}
+
+.phone[data-state="fault"] .hero-art {
+  background:
+    radial-gradient(120% 80% at 50% 100%, rgba(255, 218, 214, 0.85) 0%, rgba(255, 246, 244, 0.2) 60%, transparent 80%);
+}
+
+.hero-art svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-copy {
+  padding: 4px 0 14px;
+}
+
+.ride {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.ride.ok {
+  color: var(--md-sys-color-primary);
+}
+
+.ride.fail {
+  color: var(--danger);
+}
+
+.km {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  margin: 4px 0 0;
+  color: var(--ink);
+}
+
+.pct {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--caption);
+  margin-top: 4px;
+}
+
+/* Fault: Can't ride is the hero. km is demoted. Not yellow, not rideable. */
+.fail-hero .ride {
+  font-size: 40px;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+}
+
+.fail-hero .km {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.3;
+  margin-top: 8px;
+  color: var(--caption);
+}
+
+.overnight {
+  margin: 10px 0 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  line-height: 1.35;
+}
+
+.status-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 0 0 12px;
+}
+
+.status-row.is-fail {
+  grid-template-columns: 1fr;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  background: var(--md-sys-color-surface-container-lowest);
+  border: 1.5px solid var(--line);
 }
 
 .chip svg {
@@ -365,20 +408,27 @@ body {
 }
 
 .chip .v {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 800;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   color: var(--ink);
 }
 
+/* Ride-fail surface — stop state, not a settings warning tile */
 .chip.fail {
   background: var(--chip-fail-bg);
-  border-color: transparent;
+  border-color: #6f0f09;
+  color: var(--chip-fail-ink);
+  min-height: 72px;
 }
 
 .chip.fail .v,
 .chip.fail .k {
   color: var(--chip-fail-ink);
+}
+
+.chip.fail .k {
+  opacity: 0.88;
 }
 
 .chip.quiet .v,
@@ -389,8 +439,8 @@ body {
 
 /* Fault battery: has charge, not a healthy green story */
 .chip.muted {
-  background: #f3f3f3;
-  border-color: #d4d4d4;
+  background: var(--md-sys-color-surface-container-low);
+  border-color: var(--line);
   color: var(--ink-soft);
 }
 
@@ -399,34 +449,36 @@ body {
   color: var(--ink-soft);
 }
 
-/* Deezer plan-name chip + DATE/AMOUNT */
+/* Deezer plan-name chip + DATE/AMOUNT. Chip is a label, not a CTA. */
 .plan-card {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
   column-gap: 12px;
   row-gap: 4px;
-  background: var(--surface);
   border: 1.5px solid var(--line);
   border-radius: var(--radius-md);
-  padding: 8px 12px;
-  min-height: 56px;
-  margin-bottom: 10px;
+  padding: 10px 14px;
+  min-height: 64px;
+  margin-bottom: 12px;
+  background: var(--md-sys-color-surface-container-lowest);
 }
 
 .plan-chip {
   display: inline-flex;
   align-items: center;
-  height: 24px;
-  padding: 0 10px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 12px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 6px;
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  border: 1px solid #6fbf97;
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   white-space: nowrap;
+  pointer-events: none;
 }
 
 .plan-pair {
@@ -437,7 +489,7 @@ body {
 }
 
 .plan-pair .k {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   color: var(--caption);
   text-transform: uppercase;
@@ -445,7 +497,7 @@ body {
 }
 
 .plan-pair .v {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--ink);
@@ -455,7 +507,7 @@ body {
 }
 
 .plan-pair .v.warn {
-  color: #8b5000;
+  color: #6b3d00;
 }
 
 .plan-pair .v.over {
@@ -464,12 +516,12 @@ body {
 
 .plan-note {
   grid-column: 1 / -1;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--caption);
 }
 
-/* Gusto fat CTA — only Due / Overdue / Fault */
+/* Gusto / Check fat CTA — only Due / Overdue / Fault */
 .cta {
   display: flex;
   align-items: center;
@@ -499,14 +551,14 @@ body {
   color: #fff;
 }
 
-/* Ready: quiet sentence only — not a pill, bar, or button */
+/* Octopus paid-up: quiet sentence only — not a pill, bar, or button */
 .calm {
   display: block;
   min-height: 0;
   margin: 0;
   padding: 0;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   color: var(--caption);
   text-align: left;
   background: transparent;
@@ -517,7 +569,8 @@ body {
 /* Meter vs app sits in leftover space, fully above the tab bar */
 .meter-block {
   margin-top: auto;
-  padding-top: 14px;
+  padding-top: 16px;
+  padding-bottom: 4px;
   flex-shrink: 0;
 }
 
@@ -533,24 +586,25 @@ body {
 .meter-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  gap: 10px;
 }
 
 .meter-box {
-  background: var(--surface);
+  background: var(--md-sys-color-surface-container-lowest);
   border: 1.5px solid var(--line);
   border-radius: var(--radius-md);
-  padding: 10px 12px;
+  padding: 12px 14px;
+  min-height: 72px;
 }
 
 .meter-box .k {
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--caption);
 }
 
 .meter-box .v {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 800;
   letter-spacing: -0.03em;
   margin-top: 2px;
@@ -559,7 +613,7 @@ body {
 
 .note {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--caption);
   margin: 8px 0 0;
 }
@@ -574,7 +628,7 @@ body {
   height: var(--nav-h);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background: var(--surface);
+  background: var(--md-sys-color-surface-container-lowest);
   border-top: 1.5px solid var(--line);
   z-index: 10;
 }
@@ -584,20 +638,26 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2px;
+  gap: 4px;
   min-height: var(--target);
   text-decoration: none;
   color: var(--caption);
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.nav a svg {
+  display: block;
+  padding: 4px 18px;
+  border-radius: 16px;
 }
 
 .nav a[aria-current="page"] {
-  color: var(--ink);
+  color: var(--md-sys-color-on-secondary-container);
 }
 
-.nav svg {
-  display: block;
+.nav a[aria-current="page"] svg {
+  background: var(--md-sys-color-secondary-container);
 }
 
 .stub {
@@ -605,7 +665,7 @@ body {
 }
 
 .stub h1 {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 800;
   letter-spacing: -0.03em;
   margin: 8px 0;
@@ -624,7 +684,7 @@ body {
     margin: 16px 0 80px;
     border-radius: 28px;
     overflow: hidden;
-    box-shadow: 0 16px 40px rgba(17, 17, 17, 0.16);
+    box-shadow: 0 16px 40px rgba(5, 32, 40, 0.16);
   }
 
   .nav {

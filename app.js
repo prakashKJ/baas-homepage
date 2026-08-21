@@ -12,11 +12,11 @@
   function icons() {
     return {
       battery:
-        '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="7" width="18" height="10" rx="2" stroke="currentColor" stroke-width="2"/><path d="M20 10h2v4h-2" fill="currentColor"/><rect x="4.5" y="9.2" width="10.5" height="5.6" rx="1" fill="currentColor"/></svg>',
+        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="7" width="18" height="10" rx="2" stroke="currentColor" stroke-width="2"/><path d="M20 10h2v4h-2" fill="currentColor"/><rect x="4.5" y="9.2" width="10.5" height="5.6" rx="1" fill="currentColor"/></svg>',
       mosfetOk:
-        '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M8 12.5l2.4 2.4L16 9.2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M8 12.5l2.4 2.4L16 9.2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
       mosfetFail:
-        '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7.5v6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="16.4" r="1.1" fill="currentColor"/></svg>',
+        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7.5v6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="16.4" r="1.1" fill="currentColor"/></svg>',
       bill:
         '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3.75h12a1.5 1.5 0 0 1 1.5 1.5v15l-2.2-1.3-2.2 1.3-2.1-1.3-2.1 1.3-2.2-1.3-2.2 1.3v-15A1.5 1.5 0 0 1 6 3.75z" stroke="currentColor" stroke-width="1.8"/><path d="M9 9h6M9 12.5h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
       chevron:
@@ -30,26 +30,28 @@
     };
   }
 
+  /* Boxy 3W e-rickshaw, 3/4 view — one front wheel, two rear wheels, cabin + roof. */
   function heroArt() {
     return (
       '<svg viewBox="0 0 320 170" fill="none" aria-hidden="true">' +
-      '<ellipse cx="160" cy="160" rx="102" ry="8" fill="#ececec"/>' +
-      '<ellipse cx="236" cy="136" rx="15" ry="16" fill="#fff" stroke="#1a1a1a" stroke-width="1.7"/>' +
-      '<ellipse cx="236" cy="136" rx="6" ry="6.5" fill="none" stroke="#1a1a1a" stroke-width="1.3"/>' +
-      '<path d="M108 68c8-24 30-34 58-34 32 0 54 12 60 34" fill="#fff" stroke="#1a1a1a" stroke-width="1.7" stroke-linejoin="round"/>' +
-      '<path d="M92 130V88c0-9 8-16 20-16h88c16 0 26 10 28 22l4 36H92z" fill="#fff" stroke="#1a1a1a" stroke-width="1.7" stroke-linejoin="round"/>' +
-      '<path d="M112 72h100" stroke="#1a1a1a" stroke-width="1.15"/>' +
-      '<path d="M118 74l1 20c1 7 10 11 20 11h32c12 0 18-5 20-12l1-19" fill="#fff" stroke="#1a1a1a" stroke-width="1.45" stroke-linejoin="round"/>' +
-      '<path d="M164 72v58" stroke="#1a1a1a" stroke-width="1.1"/>' +
-      '<path d="M92 104c-18 3-30 12-34 20v6h34v-26z" fill="#fff" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round"/>' +
-      '<path d="M48 92c10 4 22 12 32 18" stroke="#1a1a1a" stroke-width="1.7" stroke-linecap="round"/>' +
-      '<path d="M42 90h16" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>' +
-      '<circle cx="64" cy="118" r="4" fill="#fff" stroke="#1a1a1a" stroke-width="1.35"/>' +
-      '<circle cx="72" cy="140" r="15.5" fill="#fff" stroke="#1a1a1a" stroke-width="1.7"/>' +
-      '<circle cx="72" cy="140" r="6" fill="none" stroke="#1a1a1a" stroke-width="1.25"/>' +
-      '<circle cx="218" cy="140" r="17.5" fill="#fff" stroke="#1a1a1a" stroke-width="1.7"/>' +
-      '<circle cx="218" cy="140" r="7" fill="none" stroke="#1a1a1a" stroke-width="1.25"/>' +
-      '<path d="M92 130h138" stroke="#1a1a1a" stroke-width="1.45"/>' +
+      '<ellipse cx="168" cy="160" rx="118" ry="8" fill="#cfcfcf"/>' +
+      '<ellipse cx="258" cy="124" rx="13" ry="14" fill="#fff" stroke="#111" stroke-width="2"/>' +
+      '<ellipse cx="258" cy="124" rx="5" ry="5.5" fill="none" stroke="#111" stroke-width="1.6"/>' +
+      '<path d="M116 28h132c10 0 16 6 16 14v8H108c2-14 4-22 8-22z" fill="#fff" stroke="#111" stroke-width="2" stroke-linejoin="round"/>' +
+      '<path d="M108 50h156c8 0 12 5 12 12v52c0 6-4 10-10 10H128c-14 0-22-8-24-20l-8-28c-2-12 2-26 12-26z" fill="#fff" stroke="#111" stroke-width="2" stroke-linejoin="round"/>' +
+      '<path d="M134 60h104c5 0 8 3 8 8v26c0 5-3 8-8 8H134c-5 0-8-3-8-8V68c0-5 3-8 8-8z" fill="#fff" stroke="#111" stroke-width="1.8"/>' +
+      '<path d="M158 50v60M216 50v60" stroke="#111" stroke-width="1.6"/>' +
+      '<path d="M108 86c-24 3-40 16-46 28v10h42L108 86z" fill="#fff" stroke="#111" stroke-width="2" stroke-linejoin="round"/>' +
+      '<path d="M44 74c14 6 28 16 40 24" stroke="#111" stroke-width="2.3" stroke-linecap="round"/>' +
+      '<path d="M38 72h20" stroke="#111" stroke-width="2.8" stroke-linecap="round"/>' +
+      '<circle cx="66" cy="104" r="5" fill="#fff" stroke="#111" stroke-width="1.8"/>' +
+      '<circle cx="72" cy="116" r="5.5" fill="#fff" stroke="#111" stroke-width="1.8"/>' +
+      '<rect x="146" y="108" width="48" height="16" rx="2" fill="#fff" stroke="#111" stroke-width="1.8"/>' +
+      '<path d="M104 124h160" stroke="#111" stroke-width="2"/>' +
+      '<circle cx="80" cy="140" r="16.5" fill="#fff" stroke="#111" stroke-width="2"/>' +
+      '<circle cx="80" cy="140" r="6.5" fill="none" stroke="#111" stroke-width="1.6"/>' +
+      '<circle cx="228" cy="140" r="18" fill="#fff" stroke="#111" stroke-width="2"/>' +
+      '<circle cx="228" cy="140" r="7" fill="none" stroke="#111" stroke-width="1.6"/>' +
       "</svg>"
     );
   }
@@ -89,11 +91,11 @@
       state: state,
       rideOk: rideOk,
       rideLabel: rideOk ? "Ready to ride" : "Can't ride",
-      km: "62 km left",
-      pct: "78%",
+      km: rideOk ? "62 km left" : "62 km left · 78%",
+      pct: rideOk ? "78%" : "",
       mosfetOk: mosfetOk,
       mosfetLabel: mosfetOk ? "Healthy" : "Fault — ride fail",
-      batteryLabel: rideOk ? "Charged" : "Charge OK",
+      batteryLabel: rideOk ? "Charged" : "Has charge",
       plan: PLAN,
       due: due[state],
       cta: state === "fault" ? "Fix" : state === "ready" ? null : "Pay now",
@@ -105,19 +107,7 @@
               body: "Penalty added. Battery is not locked.",
             }
           : null,
-      overnight: "Parked 10:14 pm → 5:02 am · 41% → 78%",
-      stillThere: "Yes",
-      next:
-        state === "fault"
-          ? "Fix the MOSFET fault. You cannot ride until it is healthy."
-          : state === "due"
-            ? "Pay now to keep the on-time discount."
-            : state === "overdue"
-              ? "Pay now. Ride status follows battery and MOSFET only."
-              : "Nothing to pay. You can ride.",
-      canRide: rideOk
-        ? "Yes. MOSFET is healthy."
-        : "No. MOSFET fault — ride fail, not a settings issue.",
+      todayLine: "Parked 10:14 pm → 5:02 am · 41% → 78% · still there",
       meter: "78%",
       appPct: "74%",
     };
@@ -141,10 +131,10 @@
     var s = stateModel(state);
     var ic = icons();
     var titleMap = {
-      ready: "Home / Ready",
-      fault: "Home / MOSFET fault",
-      due: "Home / Due",
-      overdue: "Home / Overdue",
+      ready: "Ready",
+      fault: "MOSFET fault",
+      due: "Due",
+      overdue: "Overdue",
     };
     document.title = "BatterySmart — " + titleMap[state];
 
@@ -181,23 +171,23 @@
       state +
       '">' +
       '<div class="dev-switcher" aria-label="Developer state switcher">' +
-      "<span>Dev</span>" +
+      "<span>DEV ONLY</span>" +
+      "<code>state=</code>" +
       switcher +
       "</div>" +
       '<header class="app-bar">' +
       '<div class="brand">' +
       '<svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#111"/><rect x="6" y="9" width="14" height="10" rx="2" fill="#fff"/><rect x="20" y="12" width="2.4" height="4" rx=".6" fill="#fff"/></svg>' +
       "BatterySmart</div>" +
-      '<div class="home-label">' +
-      titleMap[state] +
-      "</div>" +
       "</header>" +
       '<main class="screen">' +
       banner +
       '<div class="hero-art" aria-hidden="true">' +
       heroArt() +
       "</div>" +
-      '<section class="hero-copy" aria-label="Ride status">' +
+      '<section class="hero-copy' +
+      (s.rideOk ? "" : " fail-hero") +
+      '" aria-label="Ride status">' +
       '<div class="ride ' +
       (s.rideOk ? "ok" : "fail") +
       '">' +
@@ -209,9 +199,14 @@
       '<div class="pct">' +
       s.pct +
       "</div>" +
+      '<p class="overnight">' +
+      s.todayLine +
+      "</p>" +
       "</section>" +
       '<section class="status-row" aria-label="Battery and MOSFET">' +
-      '<div class="chip">' +
+      '<div class="chip' +
+      (s.rideOk ? "" : " muted") +
+      '">' +
       ic.battery +
       '<div class="meta"><div class="k">Battery</div><div class="v">' +
       s.batteryLabel +
@@ -241,20 +236,7 @@
       dueNote +
       "</section>" +
       cta +
-      '<section class="below" aria-label="More detail">' +
-      '<p class="section-title">Today</p>' +
-      '<div class="job"><h3>Can I ride?</h3><p>' +
-      s.canRide +
-      "</p></div>" +
-      '<div class="job"><h3>Did it charge overnight?</h3><p>' +
-      s.overnight +
-      "</p></div>" +
-      '<div class="job"><h3>Is it still there?</h3><p>' +
-      s.stillThere +
-      "</p></div>" +
-      '<div class="job"><h3>What’s next?</h3><p>' +
-      s.next +
-      "</p></div>" +
+      '<section class="meter-block" aria-label="Meter vs app">' +
       '<p class="section-title">Meter vs app</p>' +
       '<div class="meter-row">' +
       '<div class="meter-box"><div class="k">Pinto · meter</div><div class="v">' +

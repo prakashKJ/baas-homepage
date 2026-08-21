@@ -34,14 +34,14 @@ Then open `http://localhost:4173/` at a 412×892 phone viewport.
 
 Jobs: did it charge overnight, is it still there, can I ride, what’s my plan, do I owe, what’s the next action.
 
-P0 above the fold on a 412×892 phone, in this stack:
+P0 on a 412×892 phone, in this stack:
 
-header → (overdue peach banner) → short line-illustrated white 3W → can-ride + km + small % → MOSFET/battery → Subscribe chip + DATE/AMOUNT → fat **Pay now** or **Fix**
+header (brand only) → (overdue peach banner) → short line-illustrated white **3W e-rickshaw** → ride status + km + small % → one overnight / still-there line → MOSFET/battery chips → Subscribe chip + DATE/AMOUNT → fat **Pay now** or **Fix**
 
-Ready is a quiet “You’re paid up · next due …” sentence — no Pay now. km is 24–32pt. The 3W hero stays short (140–180pt) so plan + due + CTA stay on the first screen.
+Ready is a quiet “You're paid up · next due …” sentence — no primary button. km is first except on MOSFET fault, where **Can't ride** is the hero and km is demoted. Battery may still have charge on fault; the story is ride-fail, not a healthy green pack.
 
 Nav stays **Home / My Wallet / Plan Details**. Wallet and Plan Details are stubs so IA is unchanged.
 
-P1 below the fold: Pinto meter vs app %. Ride status follows battery and MOSFET only — overdue does not invent a battery lockout.
+Meter vs app sits fully above the tab bar. Ride status follows battery and MOSFET only — overdue does not invent a battery lockout. No Today FAQ cards.
 
 Off these screens: rewards, referral, FAQs, AMC, stations, wait, swap history, onboarding.

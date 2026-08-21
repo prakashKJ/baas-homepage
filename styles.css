@@ -1,10 +1,10 @@
-/* BatterySmart BaaS Home — white page, Mobbin feel, Bob's fold stack */
+/* BatterySmart BaaS Home — white page, sunlight contrast, 3W hero */
 
 :root {
   --ink: #111111;
-  --ink-soft: #3d3d3d;
-  --caption: #6b6b6b;
-  --line: #e6e6e6;
+  --ink-soft: #3a3a3a;
+  --caption: #4a4a4a;
+  --line: #c8c8c8;
   --page: #ffffff;
   --accent: #1a8f3c;
   --accent-ink: #ffffff;
@@ -13,15 +13,14 @@
   --rust: #8b3a1f;
   --chip-fail-bg: #fdecea;
   --chip-fail-ink: #8b1d1d;
-  --shadow-oval: #ececec;
   --radius-sm: 10px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --space-inset: 16px;
   --target: 48px;
   --nav-h: 64px;
-  --switcher-h: 28px;
-  --hero-art-h: 148px;
+  --switcher-h: 26px;
+  --hero-art-h: 140px;
   --cta-h: 54px;
   --font: "Manrope", "Roboto", system-ui, sans-serif;
 }
@@ -60,7 +59,7 @@ body {
   color: var(--ink);
 }
 
-/* Developer switcher — not product UI */
+/* Developer-only strip — debug chrome, not a product tab bar */
 .dev-switcher {
   height: var(--switcher-h);
   min-height: var(--switcher-h);
@@ -68,38 +67,48 @@ body {
   align-items: center;
   gap: 6px;
   padding: 0 10px;
-  background: #1a1a1a;
-  color: #f2f2f2;
+  background: #141414;
+  color: #8d8d8d;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
   flex-shrink: 0;
   z-index: 20;
+  border-bottom: 1px dashed #3f3f3f;
 }
 
 .dev-switcher span {
-  opacity: 0.55;
+  color: #e6b800;
+  font-weight: 700;
   margin-right: 2px;
 }
 
+.dev-switcher code {
+  color: #6e6e6e;
+  font-family: inherit;
+  font-size: inherit;
+}
+
 .dev-switcher a {
-  color: #f2f2f2;
+  color: #bdbdbd;
   text-decoration: none;
-  padding: 2px 7px;
-  border-radius: 6px;
-  border: 1px solid transparent;
+  padding: 1px 5px;
+  border-radius: 2px;
+  border: 1px dashed transparent;
 }
 
 .dev-switcher a[aria-current="page"] {
-  background: #333;
-  color: #fff;
+  color: #f3f3f3;
+  border-color: #5a5a5a;
+  background: #222;
 }
 
 .app-bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   min-height: 44px;
   padding: 0 var(--space-inset);
   flex-shrink: 0;
@@ -110,7 +119,7 @@ body {
   align-items: center;
   gap: 8px;
   font-weight: 800;
-  font-size: 16px;
+  font-size: 17px;
   letter-spacing: -0.02em;
   color: var(--ink);
 }
@@ -122,17 +131,17 @@ body {
 }
 
 .home-label {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--caption);
-  letter-spacing: 0.02em;
 }
 
 .screen {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 0 var(--space-inset) calc(var(--nav-h) + 16px);
+  min-height: 0;
+  padding: 0 var(--space-inset) calc(var(--nav-h) + 14px);
 }
 
 /* KOHO-style overdue banner — pale peach, rust type, icon + chevron */
@@ -158,13 +167,13 @@ body {
 
 .banner strong {
   display: block;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 800;
 }
 
 .banner span {
   display: block;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   margin-top: 1px;
 }
@@ -174,13 +183,13 @@ body {
   opacity: 0.85;
 }
 
-/* Rivian-feel: short line-illustrated white 3W + oval shadow. Max 140–180pt. */
+/* Short line-illustrated white 3W e-rickshaw + oval shadow */
 .hero-art {
   display: flex;
   align-items: flex-end;
   justify-content: center;
   height: var(--hero-art-h);
-  max-height: 180px;
+  max-height: 160px;
   margin: 0 0 2px;
   flex-shrink: 0;
 }
@@ -192,11 +201,11 @@ body {
 }
 
 .hero-copy {
-  padding: 2px 0 10px;
+  padding: 2px 0 12px;
 }
 
 .ride {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 800;
   letter-spacing: -0.01em;
   color: var(--ink);
@@ -207,7 +216,7 @@ body {
 }
 
 .km {
-  font-size: 28px;
+  font-size: 34px;
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.05;
@@ -216,28 +225,52 @@ body {
 }
 
 .pct {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 700;
   color: var(--caption);
   margin-top: 2px;
+}
+
+/* Fault: Can't ride is the hero. km is demoted. */
+.fail-hero .ride {
+  font-size: 34px;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.fail-hero .km {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.3;
+  margin-top: 6px;
+  color: var(--caption);
+}
+
+.overnight {
+  margin: 8px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  line-height: 1.35;
 }
 
 .status-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
-  margin: 0 0 10px;
+  margin: 0 0 12px;
 }
 
 .chip {
   display: flex;
   align-items: center;
-  gap: 8px;
-  min-height: 48px;
-  padding: 6px 10px;
+  gap: 10px;
+  min-height: 56px;
+  padding: 8px 12px;
   border-radius: var(--radius-md);
   background: var(--page);
-  border: 1px solid var(--line);
+  border: 1.5px solid var(--line);
 }
 
 .chip svg {
@@ -249,15 +282,15 @@ body {
 }
 
 .chip .k {
-  font-size: 11px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 800;
   color: var(--caption);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 
 .chip .v {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 800;
   letter-spacing: -0.01em;
   color: var(--ink);
@@ -273,14 +306,32 @@ body {
   color: var(--chip-fail-ink);
 }
 
-/* Deezer plan-name chip + DATE/AMOUNT, compressed ~56–72pt */
+.chip.quiet .v,
+.chip.quiet .k {
+  color: var(--caption);
+  font-weight: 700;
+}
+
+/* Fault battery: has charge, not a healthy green story */
+.chip.muted {
+  background: #f3f3f3;
+  border-color: #d4d4d4;
+  color: var(--ink-soft);
+}
+
+.chip.muted .v,
+.chip.muted .k {
+  color: var(--ink-soft);
+}
+
+/* Deezer plan-name chip + DATE/AMOUNT */
 .plan-card {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
   column-gap: 12px;
   row-gap: 4px;
-  border: 1px solid var(--line);
+  border: 1.5px solid var(--line);
   border-radius: var(--radius-md);
   padding: 8px 12px;
   min-height: 56px;
@@ -290,12 +341,12 @@ body {
 .plan-chip {
   display: inline-flex;
   align-items: center;
-  height: 22px;
+  height: 24px;
   padding: 0 10px;
   border-radius: 999px;
   background: var(--accent);
   color: var(--accent-ink);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -310,15 +361,15 @@ body {
 }
 
 .plan-pair .k {
-  font-size: 10px;
-  font-weight: 700;
+  font-size: 11px;
+  font-weight: 800;
   color: var(--caption);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
 
 .plan-pair .v {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--ink);
@@ -336,12 +387,12 @@ body {
 
 .plan-note {
   grid-column: 1 / -1;
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 700;
   color: var(--caption);
 }
 
-/* Gusto fat CTA — full-bleed in 16pt inset, rounded RECT, 52–56pt */
+/* Gusto fat CTA — only Due / Overdue / Fault */
 .cta {
   display: flex;
   align-items: center;
@@ -371,54 +422,35 @@ body {
   color: #fff;
 }
 
-/* Octopus-style paid-up: calm sentence, not a green success pill */
+/* Ready: quiet sentence only — not a pill, bar, or button */
 .calm {
   display: block;
   min-height: 0;
-  margin: 4px 0 0;
-  padding: 8px 0;
+  margin: 0;
+  padding: 0;
   font-size: 15px;
   font-weight: 600;
   color: var(--caption);
   text-align: left;
   background: transparent;
+  border: 0;
   border-radius: 0;
 }
 
-/* P1 / job answers below the 412×892 fold */
-.below {
-  margin-top: 20px;
-  padding-top: 4px;
+/* Meter vs app sits in leftover space, fully above the tab bar */
+.meter-block {
+  margin-top: auto;
+  padding-top: 14px;
+  flex-shrink: 0;
 }
 
 .section-title {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--caption);
   margin: 0 0 8px;
-}
-
-.job {
-  background: #f7f7f7;
-  border-radius: var(--radius-md);
-  padding: 12px;
-  margin-bottom: 8px;
-}
-
-.job h3 {
-  margin: 0 0 4px;
-  font-size: 14px;
-  font-weight: 800;
-  color: var(--ink);
-}
-
-.job p {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--caption);
 }
 
 .meter-row {
@@ -429,19 +461,19 @@ body {
 
 .meter-box {
   background: var(--page);
-  border: 1px solid var(--line);
+  border: 1.5px solid var(--line);
   border-radius: var(--radius-md);
-  padding: 12px;
+  padding: 10px 12px;
 }
 
 .meter-box .k {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--caption);
 }
 
 .meter-box .v {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 800;
   letter-spacing: -0.03em;
   margin-top: 2px;
@@ -466,7 +498,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background: var(--page);
-  border-top: 1px solid var(--line);
+  border-top: 1.5px solid var(--line);
   z-index: 10;
 }
 
@@ -479,7 +511,7 @@ body {
   min-height: var(--target);
   text-decoration: none;
   color: var(--caption);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
 }
 

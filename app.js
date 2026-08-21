@@ -30,55 +30,59 @@
     };
   }
 
-  /* Passenger e-rickshaw, side view facing left.
-     Open sides, canopy, handlebar, driver seat, 2-seat bench. Not a cargo box. */
+  /* 3/4 passenger e-rickshaw: open cabin you can see through, bench, driver, handlebar.
+     Thin mint canopy. No cargo box / enclosed van walls. */
   function heroArt(rideOk) {
     var stop =
       rideOk
         ? ""
         : '<g>' +
-          '<circle cx="196" cy="72" r="20" fill="#9b1b12"/>' +
-          '<path d="M186 72h20" stroke="#fff" stroke-width="4.2" stroke-linecap="round"/>' +
+          '<circle cx="214" cy="58" r="18" fill="#9b1b12"/>' +
+          '<path d="M205 58h18" stroke="#fff" stroke-width="4" stroke-linecap="round"/>' +
           "</g>";
     return (
       '<svg viewBox="0 0 360 176" fill="none" aria-hidden="true">' +
-      '<ellipse cx="178" cy="168" rx="122" ry="6.5" fill="#8eafbb"/>' +
-      /* far-side posts + wheel so the cabin reads as open, not a box */
-      '<ellipse cx="274" cy="142" rx="13" ry="14.5" fill="#d7eef8" stroke="#1d3a44" stroke-width="1.35"/>' +
-      '<path d="M118 50v80M256 50v80" stroke="#3d5b66" stroke-width="1.35"/>' +
-      /* mint canopy — passenger auto roof, not a cargo lid */
-      '<path d="M70 48c10-18 34-24 70-24h118c38 0 58 10 66 24v8H68v-8z" fill="#4ecf9a" stroke="#052028" stroke-width="2" stroke-linejoin="round"/>' +
-      '<path d="M72 56h218" stroke="#052028" stroke-width="1.6"/>' +
-      /* four near-side posts, nothing filled between them */
-      '<path d="M96 56v78M156 56v38M248 56v38M298 56v78" stroke="#052028" stroke-width="2.05" stroke-linecap="round"/>' +
-      /* open side rail — a bar, not a wall */
-      '<path d="M156 94h92" stroke="#052028" stroke-width="1.9" stroke-linecap="round"/>' +
-      /* passenger bench: two separate seats + low backs, see-through */
-      '<rect x="166" y="116" width="42" height="15" rx="7" fill="#b6f3d6" stroke="#052028" stroke-width="1.65"/>' +
-      '<rect x="216" y="116" width="42" height="15" rx="7" fill="#b6f3d6" stroke="#052028" stroke-width="1.65"/>' +
-      '<path d="M172 116c6-11 24-11 30 0" fill="none" stroke="#052028" stroke-width="1.7" stroke-linecap="round"/>' +
-      '<path d="M222 116c6-11 24-11 30 0" fill="none" stroke="#052028" stroke-width="1.7" stroke-linecap="round"/>' +
-      '<path d="M176 131v8M200 131v8M226 131v8M250 131v8" stroke="#052028" stroke-width="1.55" stroke-linecap="round"/>' +
-      /* floor, open cabin */
-      '<path d="M118 134h176" stroke="#052028" stroke-width="2.05" stroke-linecap="round"/>' +
-      /* driver seat, separate from the bench */
-      '<path d="M90 108c2-13 20-15 26-3v25H92c-1-7-2-15-2-22z" fill="#c4e7ff" stroke="#052028" stroke-width="1.7" stroke-linejoin="round"/>' +
-      /* windshield only at the driver */
-      '<path d="M78 56l-16 46h32l10-46H78z" fill="#c4e7ff" stroke="#052028" stroke-width="1.7" stroke-linejoin="round"/>' +
-      /* handlebar + stem */
-      '<path d="M34 86h40" stroke="#052028" stroke-width="3.3" stroke-linecap="round"/>' +
-      '<circle cx="36" cy="86" r="3.1" fill="#052028"/>' +
-      '<circle cx="72" cy="86" r="3.1" fill="#052028"/>' +
-      '<path d="M54 86v26" stroke="#052028" stroke-width="2.05"/>' +
-      /* nose, headlight */
-      '<path d="M42 124c10 8 26 12 42 12v-14c-16 0-30 2-42 6z" fill="#c4e7ff" stroke="#052028" stroke-width="1.65" stroke-linejoin="round"/>' +
-      '<circle cx="48" cy="118" r="5.1" fill="#fff4c4" stroke="#052028" stroke-width="1.5"/>' +
-      /* wheels */
-      '<circle cx="80" cy="148" r="16.5" fill="#f4faff" stroke="#052028" stroke-width="2.05"/>' +
-      '<circle cx="80" cy="148" r="6.2" fill="none" stroke="#052028" stroke-width="1.4"/>' +
-      '<circle cx="250" cy="148" r="18.5" fill="#f4faff" stroke="#052028" stroke-width="2.05"/>' +
-      '<circle cx="250" cy="148" r="7" fill="none" stroke="#052028" stroke-width="1.4"/>' +
-      '<path d="M228 134h50c5 0 8 3 8 7v5H222v-6c0-4 2-6 6-6z" fill="#d7eef8" stroke="#052028" stroke-width="1.55" stroke-linejoin="round"/>' +
+      '<ellipse cx="186" cy="168" rx="124" ry="6" fill="#8eafbb"/>' +
+      /* far rear wheel */
+      '<ellipse cx="292" cy="138" rx="12" ry="14" fill="#d7eef8" stroke="#1d3a44" stroke-width="1.3"/>' +
+      '<ellipse cx="292" cy="138" rx="4.4" ry="5.2" fill="none" stroke="#1d3a44" stroke-width="1.1"/>' +
+      /* far posts — cabin is see-through */
+      '<path d="M132 46v78M268 50v70" stroke="#5a7380" stroke-width="1.35"/>' +
+      /* floor / running board, open under the seats */
+      '<path d="M78 136h206c8 0 12 3 12 7v4H70v-5c0-4 3-6 8-6z" fill="#e8f4fb" stroke="#052028" stroke-width="1.6" stroke-linejoin="round"/>' +
+      /* passenger bench across the open cabin (two seats, not a crate) */
+      '<path d="M168 108h92c6 0 8 3 8 7v12H162v-12c0-5 3-7 6-7z" fill="#b6f3d6" stroke="#052028" stroke-width="1.7" stroke-linejoin="round"/>' +
+      '<path d="M178 108v-16c8-10 24-10 32 0v16" fill="#d7eef8" stroke="#052028" stroke-width="1.55" stroke-linejoin="round"/>' +
+      '<path d="M220 108v-16c8-10 24-10 32 0v16" fill="#d7eef8" stroke="#052028" stroke-width="1.55" stroke-linejoin="round"/>' +
+      /* two seated passengers — locks “this carries people” */
+      '<circle cx="194" cy="78" r="7" fill="#c4e7ff" stroke="#052028" stroke-width="1.5"/>' +
+      '<path d="M182 108c2-16 8-20 12-22 6 2 12 8 14 22" fill="#c4e7ff" stroke="#052028" stroke-width="1.5" stroke-linejoin="round"/>' +
+      '<circle cx="236" cy="76" r="7" fill="#c4e7ff" stroke="#052028" stroke-width="1.5"/>' +
+      '<path d="M224 108c2-16 8-22 12-24 6 2 12 10 14 24" fill="#c4e7ff" stroke="#052028" stroke-width="1.5" stroke-linejoin="round"/>' +
+      /* near posts + grab rail only — sides stay open */
+      '<path d="M124 44v90M164 52v42M248 52v42M286 48v86" stroke="#052028" stroke-width="2.05" stroke-linecap="round"/>' +
+      '<path d="M164 92h84" stroke="#052028" stroke-width="1.8" stroke-linecap="round"/>' +
+      /* thin mint canopy with visible underside, not a closed lid */
+      '<path d="M108 28h168c18 4 28 10 32 18H92c6-10 12-16 16-18z" fill="#3cc48e" stroke="#052028" stroke-width="2" stroke-linejoin="round"/>' +
+      '<path d="M92 46h216" stroke="#052028" stroke-width="1.7"/>' +
+      '<path d="M100 46c4 8 8 10 14 10h148c8 0 12-2 16-10" fill="none" stroke="#1d3a44" stroke-width="1.25"/>' +
+      /* driver seat + driver at the handlebar */
+      '<path d="M96 112c2-14 18-16 24-4v24H98c-1-6-2-14-2-20z" fill="#b6f3d6" stroke="#052028" stroke-width="1.6" stroke-linejoin="round"/>' +
+      '<circle cx="106" cy="74" r="7.2" fill="#c4e7ff" stroke="#052028" stroke-width="1.5"/>' +
+      '<path d="M96 112c4-18 10-24 10-26 8 2 16 12 18 26" fill="#c4e7ff" stroke="#052028" stroke-width="1.5" stroke-linejoin="round"/>' +
+      /* small windshield, handlebar, nose, headlight */
+      '<path d="M78 50l-14 44h30l8-44H78z" fill="#c4e7ff" stroke="#052028" stroke-width="1.65" stroke-linejoin="round"/>' +
+      '<path d="M32 88h42" stroke="#052028" stroke-width="3.2" stroke-linecap="round"/>' +
+      '<circle cx="34" cy="88" r="3" fill="#052028"/>' +
+      '<circle cx="72" cy="88" r="3" fill="#052028"/>' +
+      '<path d="M52 88v22" stroke="#052028" stroke-width="2"/>' +
+      '<path d="M40 126c10 8 28 12 44 12v-12c-16 0-30 1-44 5z" fill="#c4e7ff" stroke="#052028" stroke-width="1.6" stroke-linejoin="round"/>' +
+      '<circle cx="46" cy="118" r="5" fill="#fff4c4" stroke="#052028" stroke-width="1.45"/>' +
+      /* near wheels */
+      '<circle cx="78" cy="148" r="16" fill="#f4faff" stroke="#052028" stroke-width="2.05"/>' +
+      '<circle cx="78" cy="148" r="6" fill="none" stroke="#052028" stroke-width="1.35"/>' +
+      '<circle cx="254" cy="148" r="18" fill="#f4faff" stroke="#052028" stroke-width="2.05"/>' +
+      '<circle cx="254" cy="148" r="7" fill="none" stroke="#052028" stroke-width="1.35"/>' +
       stop +
       "</svg>"
     );

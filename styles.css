@@ -1,16 +1,22 @@
 /* BatterySmart BaaS Home — white page, sunlight contrast, 3W hero */
 
 :root {
-  --ink: #111111;
-  --ink-soft: #3a3a3a;
-  --caption: #4a4a4a;
-  --line: #c8c8c8;
-  --page: #ffffff;
-  --accent: #1a8f3c;
+  --ink: #0c1b24;
+  --ink-soft: #2a4450;
+  --caption: #3d5560;
+  --line: #b7cdd6;
+  --page: #f3fbff;
+  --surface: #ffffff;
+  --mint: #0b6b4a;
+  --mint-soft: #d9fff0;
+  --blue: #d7eef8;
+  --accent: #0b6b4a;
   --accent-ink: #ffffff;
-  --danger: #c62828;
+  --danger: #b42318;
   --peach: #fde8d7;
   --rust: #8b3a1f;
+  --grace: #d7eef8;
+  --grace-ink: #0c1b24;
   --chip-fail-bg: #fdecea;
   --chip-fail-ink: #8b1d1d;
   --radius-sm: 10px;
@@ -19,8 +25,7 @@
   --space-inset: 16px;
   --target: 48px;
   --nav-h: 64px;
-  --switcher-h: 26px;
-  --hero-art-h: 140px;
+  --hero-art-h: 132px;
   --cta-h: 54px;
   --font: "Manrope", "Roboto", system-ui, sans-serif;
 }
@@ -35,7 +40,7 @@ html,
 body {
   margin: 0;
   min-height: 100%;
-  background: #e8e8e8;
+  background: #c5dce6;
   color: var(--ink);
   font-family: var(--font);
   font-size: 16px;
@@ -61,12 +66,12 @@ body {
 
 /* Developer-only strip — debug chrome, not a product tab bar */
 .dev-switcher {
-  height: var(--switcher-h);
-  min-height: var(--switcher-h);
+  min-height: 26px;
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 0 10px;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  padding: 4px 10px;
   background: #141414;
   color: #8d8d8d;
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
@@ -108,10 +113,29 @@ body {
 .app-bar {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  min-height: 44px;
-  padding: 0 var(--space-inset);
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 56px;
+  padding: 8px var(--space-inset);
   flex-shrink: 0;
+  background: linear-gradient(180deg, var(--blue) 0%, var(--page) 100%);
+}
+
+.header-ride {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: var(--mint-soft);
+  color: var(--mint);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.header-ride.fail {
+  background: var(--chip-fail-bg);
+  color: var(--chip-fail-ink);
 }
 
 .brand {
@@ -154,6 +178,16 @@ body {
   background: var(--peach);
   color: var(--rust);
   margin: 0 0 8px;
+}
+
+.banner.grace {
+  background: var(--grace);
+  color: var(--grace-ink);
+}
+
+.banner.fault {
+  background: var(--chip-fail-bg);
+  color: var(--chip-fail-ink);
 }
 
 .banner svg {
@@ -269,8 +303,49 @@ body {
   min-height: 56px;
   padding: 8px 12px;
   border-radius: var(--radius-md);
-  background: var(--page);
+  background: var(--surface);
   border: 1.5px solid var(--line);
+}
+
+.jobs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin: 0 0 10px;
+}
+
+.jobs div {
+  min-height: 48px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+}
+
+.jobs span {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--caption);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.jobs b {
+  display: block;
+  margin-top: 2px;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.phone[data-state="fault"] .jobs div:first-child {
+  background: var(--chip-fail-bg);
+  border-color: transparent;
+}
+
+.phone[data-state="fault"] .jobs div:first-child b {
+  color: var(--chip-fail-ink);
 }
 
 .chip svg {
@@ -331,6 +406,7 @@ body {
   align-items: center;
   column-gap: 12px;
   row-gap: 4px;
+  background: var(--surface);
   border: 1.5px solid var(--line);
   border-radius: var(--radius-md);
   padding: 8px 12px;
@@ -461,7 +537,7 @@ body {
 }
 
 .meter-box {
-  background: var(--page);
+  background: var(--surface);
   border: 1.5px solid var(--line);
   border-radius: var(--radius-md);
   padding: 10px 12px;
@@ -498,7 +574,7 @@ body {
   height: var(--nav-h);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background: var(--page);
+  background: var(--surface);
   border-top: 1.5px solid var(--line);
   z-index: 10;
 }

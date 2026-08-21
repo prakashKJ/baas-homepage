@@ -1,26 +1,38 @@
 # BatterySmart BaaS homepage
 
-Throwaway static Home screens for **3W battery rental** (subscribe). English only. Mobile viewport **412×892**.
+Throwaway static Home screens for **3W battery rental**. English only. Mobile viewport **412×892**.
 
 No npm. No build. Open the HTML files, or serve the folder.
 
-## Open all four screens
+Live: [baas-homepage.vercel.app](https://baas-homepage.vercel.app)
 
-Query on Home (`index.html` defaults to Ready):
+## Open every Home state
 
-- [Ready](index.html?state=ready) — `index.html` or `index.html?state=ready`
-- [MOSFET fault](index.html?state=fault) — `index.html?state=fault`
-- [Due](index.html?state=due) — `index.html?state=due`
-- [Overdue + penalty](index.html?state=overdue) — `index.html?state=overdue`
+Query on Home (`index.html` defaults to Ready), or the dedicated file. `cleanUrls` also serves `/fault`, `/grace`, and so on.
 
-Dedicated files:
+| State | Query | File / path |
+| --- | --- | --- |
+| Ready | `/?state=ready` | [ready.html](ready.html) |
+| MOSFET fail (ride blocked) | `/?state=fault` | [fault.html](fault.html) |
+| Due | `/?state=due` | [due.html](due.html) |
+| Overdue + ₹150 | `/?state=overdue` | [overdue.html](overdue.html) |
+| First run | `/?state=first-run` | [first-run.html](first-run.html) |
+| Paid up | `/?state=paid-up` | [paid-up.html](paid-up.html) |
+| Grace | `/?state=grace` | [grace.html](grace.html) |
+| Subscribe | `/?state=subscribe` | [subscribe.html](subscribe.html) |
+| Lease-to-own | `/?state=lease` | [lease.html](lease.html) · [lease-to-own.html](lease-to-own.html) |
 
-- [ready.html](ready.html)
-- [fault.html](fault.html)
-- [due.html](due.html)
-- [overdue.html](overdue.html)
+Live examples:
 
-A small **Dev** strip switches states. It is not product UI.
+- https://baas-homepage.vercel.app/
+- https://baas-homepage.vercel.app/?state=fault
+- https://baas-homepage.vercel.app/first-run
+- https://baas-homepage.vercel.app/paid-up
+- https://baas-homepage.vercel.app/grace
+- https://baas-homepage.vercel.app/subscribe
+- https://baas-homepage.vercel.app/lease
+
+A **DEV ONLY** strip switches states. It is not product UI.
 
 Locally:
 
@@ -32,16 +44,12 @@ Then open `http://localhost:4173/` at a 412×892 phone viewport.
 
 ## What each Home answers
 
-Jobs: did it charge overnight, is it still there, can I ride, what’s my plan, do I owe, what’s the next action.
+Four questions on the page: can I ride, what’s my plan, do I owe, what’s next.
 
-P0 on a 412×892 phone, in this stack:
+Header is brand + **Can ride / Can't ride**. MOSFET fail is a red ride-block, not yellow, not settings, not rideable. **Can't ride** is the hero; km is demoted. Overdue does not lock the battery. Grace can still ride.
 
-header (brand only) → (overdue peach banner) → short line-illustrated white **passenger e-rickshaw** (open cabin + bench, not a cargo box) → ride status + km + small % → one overnight / still-there line → MOSFET/battery chips → Subscribe chip + DATE/AMOUNT → fat **Pay now** or **Fix**
+Hero: can-I-ride + **km left**. % stays small. Short line-illustrated **passenger e-rickshaw** (open sides, bench, canopy, handlebar + driver seat).
 
-Ready is a quiet “You're paid up · next due …” sentence — no primary button. km is first except on MOSFET fault, where **Can't ride** is the hero and km is demoted. Fault is a red ride-fail, not a yellow warning or a charged-battery story. Overdue shows **₹2,499 + ₹150 penalty**.
-
-Nav stays **Home / My Wallet / Plan Details**. Wallet and Plan Details are stubs so IA is unchanged.
-
-Meter vs app sits fully above the tab bar. Ride status follows battery and MOSFET only — overdue does not invent a battery lockout. No Today FAQ cards.
+Plan types on Home: **Subscribe** and **Lease-to-own** (₹2,499/month). Nav stays **Home / My Wallet / Plan Details**.
 
 Off these screens: rewards, referral, FAQs, AMC, stations, wait, swap history, onboarding.

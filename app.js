@@ -39,10 +39,11 @@
       '<ellipse cx="270" cy="134" rx="5" ry="5.5" fill="none" stroke="#111" stroke-width="1.3"/>' +
       '<path d="M118 76c8-36 42-50 84-50 46 0 78 16 84 50" fill="#fff" stroke="#111" stroke-width="1.9" stroke-linejoin="round"/>' +
       '<path d="M166 76h108c6 0 10 6 10 14l-4 42H166V76z" fill="#fff" stroke="#111" stroke-width="1.9" stroke-linejoin="round"/>' +
-      '<path d="M180 82h82c4 0 6 3 6 7l-2 28H180V82z" fill="#fff" stroke="#111" stroke-width="1.5"/>' +
-      '<path d="M186 114h72" stroke="#111" stroke-width="2" stroke-linecap="round"/>' +
-      '<path d="M186 114v-14M222 114v-14M258 114v-14" stroke="#111" stroke-width="1.5" stroke-linecap="round"/>' +
-      '<path d="M186 114c0 7 72 7 72 0" fill="none" stroke="#111" stroke-width="1.4"/>' +
+      '<path d="M178 80h88c3 0 5 2 5 6v32H178V80z" fill="#f7f7f7" stroke="#111" stroke-width="1.5"/>' +
+      '<path d="M184 116h78" stroke="#111" stroke-width="2.1" stroke-linecap="round"/>' +
+      '<path d="M184 116v-16M223 116v-16M262 116v-16" stroke="#111" stroke-width="1.6" stroke-linecap="round"/>' +
+      '<path d="M184 100h78" stroke="#111" stroke-width="1.3" stroke-linecap="round"/>' +
+      '<path d="M184 116c0 8 78 8 78 0" fill="none" stroke="#111" stroke-width="1.5"/>' +
       '<path d="M118 76l4 34h44V76H118z" fill="#fff" stroke="#111" stroke-width="1.8" stroke-linejoin="round"/>' +
       '<path d="M126 80l2 22h28V80H126z" fill="#fff" stroke="#111" stroke-width="1.35"/>' +
       '<path d="M118 102c-22 6-40 16-44 26v6h44v-32z" fill="#fff" stroke="#111" stroke-width="1.8" stroke-linejoin="round"/>' +
@@ -85,9 +86,9 @@
       },
       overdue: {
         date: "14 Aug",
-        amount: "₹2,499 + ₹150 penalty",
+        amount: "₹2,499 + ₹150",
         amountTone: "over",
-        note: "Overdue · penalty added",
+        note: "Overdue · ₹150 penalty",
       },
     };
 

@@ -375,6 +375,7 @@ body {
   color: var(--ink);
   line-height: 1.15;
   margin-top: 1px;
+  white-space: nowrap;
 }
 
 .plan-pair .v.warn {

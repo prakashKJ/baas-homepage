@@ -46,12 +46,14 @@
       '<circle cx="76" cy="118" r="4.2" fill="#fff" stroke="#111" stroke-width="1.5"/>' +
       '<path d="M48 84c18 8 38 20 54 28" stroke="#111" stroke-width="2" stroke-linecap="round"/>' +
       '<path d="M42 82h22" stroke="#111" stroke-width="2.8" stroke-linecap="round"/>' +
-      '<path d="M108 116c2-10 26-12 32-2l-2 14h-28c-1-4-2-8-2-12z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/>' +
-      '<path d="M248 64c6-2 16 1 16 11v51h-16V64z" fill="#fff" stroke="#111" stroke-width="1.7" stroke-linejoin="round"/>' +
-      '<path d="M164 108h98c5 0 8 3 8 8v10H160v-10c0-5 2-8 4-8z" fill="#fff" stroke="#111" stroke-width="1.7" stroke-linejoin="round"/>' +
-      '<path d="M210 110v14" stroke="#111" stroke-width="1.2"/>' +
+      '<path d="M106 114c2-11 28-13 34-2l-2 14H108c-1-4-2-8-2-12z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/>' +
+      '<path d="M240 62c4-3 20-3 24 6v56h-20c-2-20-4-48-4-62z" fill="#fff" stroke="#111" stroke-width="1.7" stroke-linejoin="round"/>' +
+      '<rect x="160" y="98" width="102" height="24" rx="8" fill="#fff" stroke="#111" stroke-width="1.7"/>' +
+      '<path d="M176 104c7 9 22 9 30 0" stroke="#111" stroke-width="1.35" fill="none" stroke-linecap="round"/>' +
+      '<path d="M216 104c7 9 22 9 30 0" stroke="#111" stroke-width="1.35" fill="none" stroke-linecap="round"/>' +
+      '<path d="M176 122v10M248 122v10" stroke="#111" stroke-width="1.5" stroke-linecap="round"/>' +
       '<path d="M122 50v76" stroke="#111" stroke-width="1.8"/>' +
-      '<path d="M262 50v20" stroke="#111" stroke-width="1.8"/>' +
+      '<path d="M262 50v18" stroke="#111" stroke-width="1.8"/>' +
       '<path d="M108 30h164c10 0 14 5 14 12v10H104c1-16 3-22 4-22z" fill="#fff" stroke="#111" stroke-width="2" stroke-linejoin="round"/>' +
       "</svg>"
     );

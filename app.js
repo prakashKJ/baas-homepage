@@ -30,28 +30,32 @@
     };
   }
 
-  /* Boxy 3W e-rickshaw, 3/4 view — one front wheel, two rear wheels, cabin + roof. */
+  /* Passenger e-rickshaw: open cabin, bench seat, canopy. Not a cargo box, not a scooter. */
   function heroArt() {
     return (
-      '<svg viewBox="0 0 320 170" fill="none" aria-hidden="true">' +
-      '<ellipse cx="168" cy="160" rx="118" ry="8" fill="#cfcfcf"/>' +
-      '<ellipse cx="258" cy="124" rx="13" ry="14" fill="#fff" stroke="#111" stroke-width="2"/>' +
-      '<ellipse cx="258" cy="124" rx="5" ry="5.5" fill="none" stroke="#111" stroke-width="1.6"/>' +
-      '<path d="M116 28h132c10 0 16 6 16 14v8H108c2-14 4-22 8-22z" fill="#fff" stroke="#111" stroke-width="2" stroke-linejoin="round"/>' +
-      '<path d="M108 50h156c8 0 12 5 12 12v52c0 6-4 10-10 10H128c-14 0-22-8-24-20l-8-28c-2-12 2-26 12-26z" fill="#fff" stroke="#111" stroke-width="2" stroke-linejoin="round"/>' +
-      '<path d="M134 60h104c5 0 8 3 8 8v26c0 5-3 8-8 8H134c-5 0-8-3-8-8V68c0-5 3-8 8-8z" fill="#fff" stroke="#111" stroke-width="1.8"/>' +
-      '<path d="M158 50v60M216 50v60" stroke="#111" stroke-width="1.6"/>' +
-      '<path d="M108 86c-24 3-40 16-46 28v10h42L108 86z" fill="#fff" stroke="#111" stroke-width="2" stroke-linejoin="round"/>' +
-      '<path d="M44 74c14 6 28 16 40 24" stroke="#111" stroke-width="2.3" stroke-linecap="round"/>' +
-      '<path d="M38 72h20" stroke="#111" stroke-width="2.8" stroke-linecap="round"/>' +
-      '<circle cx="66" cy="104" r="5" fill="#fff" stroke="#111" stroke-width="1.8"/>' +
-      '<circle cx="72" cy="116" r="5.5" fill="#fff" stroke="#111" stroke-width="1.8"/>' +
-      '<rect x="146" y="108" width="48" height="16" rx="2" fill="#fff" stroke="#111" stroke-width="1.8"/>' +
-      '<path d="M104 124h160" stroke="#111" stroke-width="2"/>' +
-      '<circle cx="80" cy="140" r="16.5" fill="#fff" stroke="#111" stroke-width="2"/>' +
-      '<circle cx="80" cy="140" r="6.5" fill="none" stroke="#111" stroke-width="1.6"/>' +
-      '<circle cx="228" cy="140" r="18" fill="#fff" stroke="#111" stroke-width="2"/>' +
-      '<circle cx="228" cy="140" r="7" fill="none" stroke="#111" stroke-width="1.6"/>' +
+      '<svg viewBox="0 0 340 172" fill="none" aria-hidden="true">' +
+      '<ellipse cx="172" cy="163" rx="112" ry="7.5" fill="#cfcfcf"/>' +
+      '<ellipse cx="270" cy="134" rx="13" ry="14" fill="#fff" stroke="#111" stroke-width="1.8"/>' +
+      '<ellipse cx="270" cy="134" rx="5" ry="5.5" fill="none" stroke="#111" stroke-width="1.3"/>' +
+      '<path d="M118 76c8-36 42-50 84-50 46 0 78 16 84 50" fill="#fff" stroke="#111" stroke-width="1.9" stroke-linejoin="round"/>' +
+      '<path d="M166 76h108c6 0 10 6 10 14l-4 42H166V76z" fill="#fff" stroke="#111" stroke-width="1.9" stroke-linejoin="round"/>' +
+      '<path d="M180 82h82c4 0 6 3 6 7l-2 28H180V82z" fill="#fff" stroke="#111" stroke-width="1.5"/>' +
+      '<path d="M186 114h72" stroke="#111" stroke-width="2" stroke-linecap="round"/>' +
+      '<path d="M186 114v-14M222 114v-14M258 114v-14" stroke="#111" stroke-width="1.5" stroke-linecap="round"/>' +
+      '<path d="M186 114c0 7 72 7 72 0" fill="none" stroke="#111" stroke-width="1.4"/>' +
+      '<path d="M118 76l4 34h44V76H118z" fill="#fff" stroke="#111" stroke-width="1.8" stroke-linejoin="round"/>' +
+      '<path d="M126 80l2 22h28V80H126z" fill="#fff" stroke="#111" stroke-width="1.35"/>' +
+      '<path d="M118 102c-22 6-40 16-44 26v6h44v-32z" fill="#fff" stroke="#111" stroke-width="1.8" stroke-linejoin="round"/>' +
+      '<path d="M52 88c16 6 36 16 52 24" stroke="#111" stroke-width="2" stroke-linecap="round"/>' +
+      '<path d="M46 86h18" stroke="#111" stroke-width="2.6" stroke-linecap="round"/>' +
+      '<circle cx="80" cy="118" r="4.4" fill="#fff" stroke="#111" stroke-width="1.5"/>' +
+      '<path d="M68 128c0-10 26-10 26 2" fill="none" stroke="#111" stroke-width="1.5"/>' +
+      '<circle cx="82" cy="141" r="16" fill="#fff" stroke="#111" stroke-width="1.9"/>' +
+      '<circle cx="82" cy="141" r="6.2" fill="none" stroke="#111" stroke-width="1.35"/>' +
+      '<circle cx="240" cy="141" r="17.5" fill="#fff" stroke="#111" stroke-width="1.9"/>' +
+      '<circle cx="240" cy="141" r="7" fill="none" stroke="#111" stroke-width="1.35"/>' +
+      '<path d="M118 132h160" stroke="#111" stroke-width="1.7"/>' +
+      '<path d="M276 94v24" stroke="#111" stroke-width="1.4"/>' +
       "</svg>"
     );
   }
@@ -94,8 +98,8 @@
       km: rideOk ? "62 km left" : "62 km left · 78%",
       pct: rideOk ? "78%" : "",
       mosfetOk: mosfetOk,
-      mosfetLabel: mosfetOk ? "Healthy" : "Fault — ride fail",
-      batteryLabel: rideOk ? "Charged" : "Has charge",
+      mosfetLabel: mosfetOk ? "Healthy" : "Fault — can't ride",
+      batteryLabel: rideOk ? "Charged" : "Unused",
       plan: PLAN,
       due: due[state],
       cta: state === "fault" ? "Fix" : state === "ready" ? null : "Pay now",
@@ -196,28 +200,35 @@
       '<div class="km">' +
       s.km +
       "</div>" +
-      '<div class="pct">' +
-      s.pct +
-      "</div>" +
+      (s.pct ? '<div class="pct">' + s.pct + "</div>" : "") +
       '<p class="overnight">' +
       s.todayLine +
       "</p>" +
       "</section>" +
-      '<section class="status-row" aria-label="Battery and MOSFET">' +
-      '<div class="chip' +
-      (s.rideOk ? "" : " muted") +
-      '">' +
-      ic.battery +
-      '<div class="meta"><div class="k">Battery</div><div class="v">' +
-      s.batteryLabel +
-      "</div></div></div>" +
-      '<div class="chip ' +
-      (s.mosfetOk ? "" : "fail") +
-      '">' +
-      (s.mosfetOk ? ic.mosfetOk : ic.mosfetFail) +
-      '<div class="meta"><div class="k">MOSFET</div><div class="v">' +
-      s.mosfetLabel +
-      "</div></div></div>" +
+      '<section class="status-row' +
+      (s.mosfetOk ? "" : " is-fail") +
+      '" aria-label="Battery and MOSFET">' +
+      (s.mosfetOk
+        ? '<div class="chip">' +
+          ic.battery +
+          '<div class="meta"><div class="k">Battery</div><div class="v">' +
+          s.batteryLabel +
+          "</div></div></div>" +
+          '<div class="chip">' +
+          ic.mosfetOk +
+          '<div class="meta"><div class="k">MOSFET</div><div class="v">' +
+          s.mosfetLabel +
+          "</div></div></div>"
+        : '<div class="chip fail">' +
+          ic.mosfetFail +
+          '<div class="meta"><div class="k">MOSFET</div><div class="v">' +
+          s.mosfetLabel +
+          "</div></div></div>" +
+          '<div class="chip muted">' +
+          ic.battery +
+          '<div class="meta"><div class="k">Battery</div><div class="v">' +
+          s.batteryLabel +
+          "</div></div></div>") +
       "</section>" +
       '<section class="plan-card" aria-label="Plan and due">' +
       '<div class="plan-chip">' +

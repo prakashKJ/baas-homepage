@@ -36,9 +36,9 @@ Jobs: did it charge overnight, is it still there, can I ride, what’s my plan, 
 
 P0 on a 412×892 phone, in this stack:
 
-header (brand only) → (overdue peach banner) → short line-illustrated white **3W e-rickshaw** → ride status + km + small % → one overnight / still-there line → MOSFET/battery chips → Subscribe chip + DATE/AMOUNT → fat **Pay now** or **Fix**
+header (brand only) → (overdue peach banner) → short line-illustrated white **passenger e-rickshaw** (open cabin + bench, not a cargo box) → ride status + km + small % → one overnight / still-there line → MOSFET/battery chips → Subscribe chip + DATE/AMOUNT → fat **Pay now** or **Fix**
 
-Ready is a quiet “You're paid up · next due …” sentence — no primary button. km is first except on MOSFET fault, where **Can't ride** is the hero and km is demoted. Battery may still have charge on fault; the story is ride-fail, not a healthy green pack.
+Ready is a quiet “You're paid up · next due …” sentence — no primary button. km is first except on MOSFET fault, where **Can't ride** is the hero and km is demoted. Fault is a red ride-fail, not a yellow warning or a charged-battery story. Overdue shows **₹2,499 + ₹150 penalty**.
 
 Nav stays **Home / My Wallet / Plan Details**. Wallet and Plan Details are stubs so IA is unchanged.
 
